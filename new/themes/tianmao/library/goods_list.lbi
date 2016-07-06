@@ -1,0 +1,286 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<div class="searchRight_title">
+  <div class="rightTitle_left"> 
+    <form method="GET" class="sort" name="listform">
+      <div class="f_l"> 
+      
+       <a style="border-right:#ccc solid 1px; height:22px; float:left; width:44px;"  href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=goods_id&order=<!-- {if $pager.sort == 'goods_id' && $pager.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if} -->#goods_list"><img style="margin-left:0px" src="images/goods_id_<!-- {if $pager.sort == 'goods_id'} -->{$pager.order}<!-- {else} -->default<!-- {/if} -->.gif" alt="{$lang.sort.goods_id}"></a> 
+        <a  style="border-right:#ccc solid 1px; height:22px; float:left; width:44px;"  href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=last_update&order=<!-- {if $pager.sort == 'last_update' && $pager.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if} -->#goods_list"><img src="images/last_update_<!-- {if $pager.sort == 'last_update'} -->{$pager.order}<!-- {else} -->default<!-- {/if} -->.gif" alt="{$lang.sort.last_update}"></a> 
+       <a  style="border-right:#ccc solid 1px; height:22px; float:left; width:44px;"  href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=sales_volume&order=<!-- {if $pager.sort == 'sales_volume' && $pager.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if} -->#goods_list"><img style="margin-left:0px"  src="images/sales_<!-- {if $pager.sort == 'sales_volume'} -->{$pager.order}<!-- {else} -->default<!-- {/if} -->.gif" alt="按销量排序"></a>
+
+         <a  style="border-right:#ccc solid 1px; height:22px; float:left; width:44px;"  href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=shop_price&order=<!-- {if $pager.sort == 'shop_price' && $pager.order == 'ASC'} -->DESC<!-- {else} -->ASC<!-- {/if} -->#goods_list"><img src="images/shop_price_<!-- {if $pager.sort == 'shop_price'} -->{$pager.order}<!-- {else} -->default<!-- {/if} -->.gif" alt="{$lang.sort.shop_price}"></a> 
+        
+         </div>   
+         
+         
+         
+      <input type="hidden" name="category" value="{$category}" />
+      <input type="hidden" name="display" value="{$pager.display}" id="display" />
+      <input type="hidden" name="brand" value="{$brand_id}" />
+      <input type="hidden" name="price_min" value="{$price_min}" />
+      <input type="hidden" name="price_max" value="{$price_max}" />
+      <input type="hidden" name="filter_attr" value="{$filter_attr}" />
+      <input type="hidden" name="page" value="{$pager.page}" />
+      <input type="hidden" name="sort" value="{$pager.sort}" />
+      <input type="hidden" name="order" value="{$pager.order}" />
+    </form>
+  </div>
+  <div class="search_list">
+     
+      <a href="javascript:;" style=" height:22px; float:left; border-right:#ccc solid 1px" onClick="javascript:display_mode('grid')"><img src="images/display_mode_grid<!-- {if $pager.display == 'grid'} -->_act<!-- {/if} -->.gif" alt="{$lang.display.grid}"></a>
+      
+      <a href="javascript:;"" onClick="javascript:display_mode('list')"><img src="images/display_mode_list<!-- {if $pager.display == 'list'} -->_act<!-- {/if} -->.gif" alt="{$lang.display.list}"></a> 
+  
+  </div>
+  <div class="rightTitle_right">
+    
+    <dl>
+      <dt class="rightTitle_prev" style="margin-right:4px;"> 
+        <!-- {if $pager.page_prev} --><a href="{$pager.page_prev}" class="activity_prev"><</a><!--{else}--><a href="javascript:void(0);" class="activity_prev2"><</a><!-- {/if} --> 
+      </dt>
+      <dt class="rightTitle_next"> 
+        <!-- {if $pager.page_next} --><a href="{$pager.page_next}" class="activity_next">></a><!--{else}--><a href="javascript:void(0);" class="activity_next2">></a><!-- {/if} --> 
+      </dt>
+      <input type="hidden" name="category" value="{$category}" />
+      <input type="hidden" name="display" value="{$pager.display}" id="display" />
+      <input type="hidden" name="brand" value="{$brand_id}" />
+      <input type="hidden" name="price_min" value="{$price_min}" />
+      <input type="hidden" name="price_max" value="{$price_max}" />
+      <input type="hidden" name="filter_attr" value="{$filter_attr}" />
+      <input type="hidden" name="page" value="{$pager.page}" />
+      <input type="hidden" name="sort" value="{$pager.sort}" />
+      <input type="hidden" name="order" value="{$pager.order}" />
+    </dl>
+    <div class="yeshu"> 
+      <!--{foreach from=$pager.page_number key=key item=item}--> 
+      <!-- {if $pager.page eq $key} --> 
+      <span>{$key}</span> 
+      <!-- {/if} --> 
+      <!--{/foreach}-->/{$pager.page_count} </div>
+  </div>
+</div>
+<!-- {if $category > 0} -->
+<form name="compareForm" action="compare.php" method="post" onSubmit="return compareGoods(this);">
+  <!-- {/if} --> 
+  <!-- {if $pager.display == 'list'} -->
+  <div class="goodsList"> 
+    <!--{foreach name=goods_list from=$goods_list item=goods}--> 
+    <ul class="clearfix bgcolor"<!--{if $smarty.foreach.goods_list.index mod 2 eq 0}-->id=""<!--{else}-->id="bgcolor"<!--{/if}-->>
+    <li> <br>
+      <a href="javascript:;" id="compareLink" onClick="Compare.add({$goods.goods_id},'{$goods.goods_name|escape:"html"}','{$goods.type}')" class="f6">比较</a> </li>
+    <li class="thumb"><a href="{$goods.url}"><img src="{$goods.goods_thumb}" alt="{$goods.goods_name}" /></a></li>
+    <li class="goodsName"> <a href="{$goods.url}" class="f6"> 
+      <!-- {if $goods.goods_style_name} --> 
+      {$goods.goods_style_name}<br />
+      <!-- {else} --> 
+      {$goods.goods_name}<br />
+      <!-- {/if} --> 
+      </a> 
+      <!-- {if $goods.goods_brief} --> 
+      {$lang.goods_brief}{$goods.goods_brief}<br />
+      <!-- {/if} --> 
+    </li>
+    <li> 
+      <!-- {if $show_marketprice} --> 
+      {$lang.market_price}<font class="market">{$goods.market_price}</font><br />
+      <!-- {/if} --> 
+      <!--{if $goods.promote_price neq "" } --> 
+      {$lang.promote_price}<font class="shop">{$goods.promote_price}</font><br />
+      <!--{else}--> 
+      {$lang.shop_price}<font class="shop">{$goods.shop_price}</font><br />
+      <!--{/if}--> 
+    </li>
+    <li class="action"> <a href="javascript:collect({$goods.goods_id});" class="abg f6">{$lang.favourable_goods}</a> <a href="javascript:addToCart({$goods.goods_id})"><img src="../images/bnt_buy_1.gif"></a> </li>
+    </ul>
+    <!--{/foreach}--> 
+  </div>
+  <!-- {elseif $pager.display == 'grid'} -->
+  <div class=" searchRight_body">
+    <ul class="y_searchList clearfix" >
+      <!--{foreach from=$goods_list item=goods name=goods_list}--> 
+      <!-- {if $goods.goods_id} --> 
+      <li  class="li {if $smarty.foreach.goods_list.iteration mod 5 eq 0}Last{/if}">
+      <div class="item clearfix">
+        <Div class="p_img"> <a href="{$goods.url}"><img src="{$goods.goods_thumb}" alt="{$goods.goods_name}"  width="210" height="210" class="item_hd_{$goods.goods_id}"/></a> </Div>
+        
+        
+      
+    <!-- {if $goods.goods_id} -->
+    
+     <div class="goodsItem"  style="margin-bottom:10px" id="goods_item{$smarty.foreach.goods_list.iteration}">
+            <a href="###" class="proThumb-prev ui-slide-arrow-s"></a>
+            
+           <!--{if $goods.pictures}-->
+           <div class="hds">
+            <ul>
+            <!-- {foreach from=$goods.pictures name=picture item=picture}-->
+           
+             <li<!--{if $smarty.foreach.picture.index eq 0}--> class="on"<!--{/if}--> data="hd_{$goods.goods_id}"><a href="javascript:void(0);"><img src="{if $picture.thumb_url}{$picture.thumb_url}{else}{$picture.img_url}{/if}" alt="{$goods.goods_name}" width="42" border="0" title="{$goods.goods_name}" /></a></li>
+           
+           <!--{/foreach}-->
+            </ul>
+		   </div>
+			<script type="text/javascript">
+            $(function(){
+               var hd_tab = $('.hds ul li');
+               hd_tab.hover(function(){
+				   var hd_tab = $(this).attr('data');				   
+				   var hd_img = $('.item_' + hd_tab);
+				   var hd_goodsimg = $(this).find('img').attr('src');				   
+                   hd_img.attr('src', hd_goodsimg);
+				   $(this).addClass('on').siblings('li').removeClass('on');
+               })
+            })
+            </script>
+           <!--{/if}-->
+             <a href="###" class="proThumb-next ui-slide-arrow-s"></a>
+           <div>
+       
+            </div>
+        </div>
+        
+    <!--{/if}-->
+
+
+          <p class="y_price">     
+          <!--{if $goods.promote_price neq "" } --> 
+          <em>{$goods.promote_price}</em> 
+          <!--{else}--> 
+          <em>{$goods.shop_price}</em> 
+          <!--{/if}--> 
+          <!-- {if $show_marketprice} --> 
+          <font class="market_s">{$goods.market_price}</font> 
+          <!-- {/if} --> 
+        </p>
+        <p class="y_proName"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.goods_name}</a></p>
+         <p class="productStatus">
+            <span>成交 <em>{$goods.sales_volume}笔</em></span>
+            <span style="border-right:0px;">评价 <a href="#">{$goods.comments_number}</a></span>
+         </p>       
+      </div>
+      </li>
+      <!--{/if}--> 
+      <!--{/foreach}-->
+    </ul>
+  </div>
+  <!-- {elseif $pager.display == 'text'} -->
+  <div class="goodsList"> 
+    <!--{foreach from=$goods_list item=goods}--> 
+    <ul class="clearfix bgcolor"<!--{if $smarty.foreach.goods_list.index mod 2 eq 0}-->id=""<!--{else}-->id="bgcolor"<!--{/if}-->>
+    <li style="margin-right:15px;"> <a href="javascript:;" id="compareLink" onClick="Compare.add({$goods.goods_id},'{$goods.goods_name|escape:"html"}','{$goods.type}')" class="f6">{$lang.compare}</a> </li>
+    <li class="goodsName"> <a href="{$goods.url}" class="f6 f5"> 
+      <!-- {if $goods.goods_style_name} --> 
+      {$goods.goods_style_name}<br />
+      <!-- {else} --> 
+      {$goods.goods_name}<br />
+      <!-- {/if} --> 
+      </a> 
+      <!-- {if $goods.goods_brief} --> 
+      {$lang.goods_brief}{$goods.goods_brief}<br />
+      <!-- {/if} --> 
+    </li>
+    <li> 
+      <!-- {if $show_marketprice} --> 
+      {$lang.market_price}<font class="market">{$goods.market_price}</font><br />
+      <!-- {/if} --> 
+      <!--{if $goods.promote_price neq "" } --> 
+      {$lang.promote_price}<font class="shop">{$goods.promote_price}</font><br />
+      <!--{else}--> 
+      {$lang.shop_price}<font class="shop">{$goods.shop_price}</font><br />
+      <!--{/if}--> 
+    </li>
+    <li class="action"> <a href="javascript:collect({$goods.goods_id});" class="abg f6">{$lang.favourable_goods}</a> <a href="javascript:addToCart({$goods.goods_id})"><img src="../images/bnt_buy_1.gif"></a> </li>
+    </ul>
+    <!--{/foreach}--> 
+  </div>
+  <!-- {/if} --> 
+  <!-- {if $category > 0} -->
+</form>
+<!-- {/if} -->
+
+<div class="blank5"></div>
+
+<script>
+	$(function(){
+		function Scroll2(id,l,r,auto){
+			this.id=$("#"+id);
+			this.ul=this.id.find("ul");
+			this.li=this.ul.find("li");
+			this.l=this.id.find("."+l);
+			this.r=this.id.find("."+r);
+			this.auto=auto;
+			this.done=true;
+			var _this=this;
+			this.init.apply(this,arguments);
+			
+		}
+	
+		Scroll2.prototype={
+			init:function(){
+				this.ul.css("width",this.li.outerWidth()*this.li.length);
+				this.event();
+			},
+			event:function(){
+				var me=this;
+				this.l.click(function(){
+					if(!me.done || me.li.length<5) return;
+					me.done=!me.done;
+					me.ul.animate({left:-me.li.outerWidth()},"fast",function(){
+						
+						me.ul=me.id.find("ul");
+						me.li=me.id.find("li");
+						me.ul.append(me.li.eq(0));
+						me.ul.css("left",0);
+						me.done=!me.done;
+					});
+					
+				});
+				this.r.click(function(){
+						if(!me.done || me.li.length<5) return;
+						me.done=!me.done;
+						me.ul=me.id.find("ul");
+						me.li=me.id.find("li");
+						me.li.eq(me.li.length-1).insertBefore(me.li.eq(0));
+						me.ul.css("left",-me.li.outerWidth()).animate({left:0},"fast",function(){
+							me.done=!me.done;
+						});
+					});
+			}
+		}
+		$("li.li").each(function(i){
+			new Scroll2("goods_item"+(i+1),"proThumb-next","proThumb-prev",false);
+		});
+		
+
+	});
+</script>
+
+<script type="Text/Javascript" language="JavaScript">
+<!--
+{literal}
+function selectPage(sel)
+{
+  sel.form.submit();
+}
+{/literal}
+//-->
+</script> 
+<script type="text/javascript">
+window.onload = function()
+{
+  Compare.init();
+  fixpng();
+}
+{foreach from=$lang.compare_js item=item key=key}
+{if $key neq 'button_compare'}
+var {$key} = "{$item}";
+{else}
+var button_compare = '';
+{/if}
+{/foreach}
+var compare_no_goods = "{$lang.compare_no_goods}";
+var btn_buy = "{$lang.btn_buy}";
+var is_cancel = "{$lang.is_cancel}";
+var select_spe = "{$lang.select_spe}";
+</script>

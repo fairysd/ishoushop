@@ -1,0 +1,37 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<!--{if $invoice_list}-->
+<style type="text/css">
+.infoList form{display:inline;}
+.infoList form a{color:#404040; text-decoration:underline;}
+</style>
+
+
+<div class="txtMarquee-top">
+
+   <div class="bd">
+				<ul class="infoList">
+                <!-- 发货单查询{foreach from=$invoice_list item=invoice} -->
+					<li class="infolist_li">{$lang.order_number} {$invoice.order_sn}<br />
+                           {$lang.consignment} {$invoice.invoice_no}
+                          
+                     </li>
+                
+                   
+                 <!-- 结束发货单查询{/foreach}-->  
+					
+				</ul>
+			</div>
+   
+
+   
+			
+            
+            
+		</div>
+
+<script type="text/javascript">
+			jQuery(".txtMarquee-top").slide({mainCell:".bd ul",autoPlay:true,effect:"topMarquee",vis:5,interTime:50});
+</script>
+
+<!-- {/if} -->

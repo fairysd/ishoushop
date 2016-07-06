@@ -1,0 +1,40 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $new_goods} -->
+
+
+<div class="skin-box-hd">
+            <i class="hd-icon"></i>
+
+            <h3><span>新品</span> </h3>
+                   
+            <!--<div class="skin-box-act">
+                <a href="search.php?intro=new" class="more" target="_blank">更多</a>
+            </div>-->
+</div>
+ <div class="news_left">       
+<!--{foreach from=$new_goods item=goods}-->
+
+<dl class="item1line1">
+
+  <div class="pic"> <a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="goodsimg" /></a></div>
+    <div class="text">
+      <p class="name"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></p>
+      <div class="attribute" >
+        <div class="cprice-area">
+      <span class="c-price">
+        <!-- {if $goods.promote_price neq ""} --> 
+        {$goods.promote_price} 
+        <!-- {else}--> 
+        {$goods.shop_price} 
+        <!--{/if}--> 
+        </span>
+        
+        </div>
+         </div>
+    </div>
+    
+
+</dl>
+<!--{/foreach}--> 
+</div>
+<!-- {/if} --> 

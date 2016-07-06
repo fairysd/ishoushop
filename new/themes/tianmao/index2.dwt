@@ -1,0 +1,812 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
+{* 包含脚本文件 *}
+{insert_scripts files='common.js,index.js'}
+</head>
+<body >
+<!-- #BeginLibraryItem "/library/page_header_index.lbi" --><!-- #EndLibraryItem -->
+<div class="block"> 
+
+<!-- #BeginLibraryItem "/library/nav.lbi" --><!-- #EndLibraryItem -->
+
+  <div class="grid-container-1190 main-container">
+    <div class="fp-cat-slide">
+       <!--上方内容左侧模块开始-->
+       <div id="content_top_left">     
+          <div id="J_CatSlide" class="cat-slide">
+        <!-- #BeginLibraryItem "/library/category_tree_index.lbi" --><!-- #EndLibraryItem -->   
+                
+        <div class="banner_right">      
+            <!-- #BeginLibraryItem "/library/index_ad.lbi" --><!-- #EndLibraryItem -->
+            <!-- #BeginLibraryItem "/library/index_ad_r.lbi" --><!-- #EndLibraryItem -->
+        </div>
+      </div>
+          
+          <div class="fp-brand-rec"> 
+             <!-- #BeginLibraryItem "/library/mid_brand.lbi" --> <!-- #EndLibraryItem -->    
+          </div>
+          
+          <div class="j_LazyloadCon fp-lazyload-con">
+             <!-- #BeginLibraryItem "/library/zhuti_mid.lbi" --> <!-- #EndLibraryItem --> 
+          </div>
+          
+       </div>
+      <!--上方内容左侧模块结束-->
+
+      <!--上方内容右侧模块开始-->
+      <div id="content_top_right" class="fp-user-info">
+          <div id="ECS_MEMBERZONE" class="tianmao_user"> <!-- #BeginLibraryItem "/library/member2.lbi" --> <!-- #EndLibraryItem -->   </div>
+          <div class="user-charge-slide">
+                  <div class="slideTxtBox_zx">
+                <div class="hd">
+               <ul><li>发货查询</li><li>订单查询</li></ul>
+                </div>
+                <div class="bd">
+                    <ul style=" height:150px;">
+                       <!-- #BeginLibraryItem "/library/invoice_query.lbi" --> <!-- #EndLibraryItem -->  
+                    </ul>
+                    <ul>
+                         <!-- #BeginLibraryItem "/library/order_query.lbi" --> <!-- #EndLibraryItem -->  
+                       
+                    </ul>
+                   
+                </div>
+            </div> 
+            <script type="text/javascript">jQuery(".slideTxtBox_zx").slide();</script>
+    
+      
+          </div>
+         
+          <div class="user-discovery pinpai_right"> 
+                 <!-- #BeginLibraryItem "/library/pinpai_right.lbi" --><!-- #EndLibraryItem -->
+          </div>
+         
+         
+      </div>
+      <!--上方内容右侧模块结束-->
+      
+      
+    </div>
+  </div>
+  <!--上方内容模块1-->
+
+<div class="mid_big">  
+ <!-- TemplateBeginEditable name="中间横条大广告宽屏" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --> 
+</div>  
+
+ <div class="mid_small">  
+ <!-- TemplateBeginEditable name="中间横条大广告窄屏" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --> 
+</div> 
+
+
+<!-- TemplateBeginEditable name="商品区域一" -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<div class="fp-floor fp-floor-nvz">
+
+
+<div class="floor-title">
+  <div class="title_txt"><span></span><a href="{$goods_cat.url}">{$goods_cat.name|escape:html}</a></div>
+  <div class="floor-rec-label">
+      <!--{foreach from=$goods_cat.cat_clild item=cat name=foo}-->
+      <a href="{$cat.url}" target="_blank" title="{$cat.name}">{$cat.name}</a>
+      <!--{/foreach}-->   
+       <a href="{$cat.url}" target="_blank">更多</a> 
+  </div>
+</div>
+
+<div class="floor-content grid-container-1190">
+   <div class="grid-col-190 floor-show">
+       <div class="floor-slide"> 
+          <ul class="floor-slide-nav ad_text"> 
+             <li lid="0" class="floor-nav-selected one1"><?php echo get_advname('indexproad_1',$GLOBALS['smarty']->_var['cat_goods']['id'])?><b class="floor-more">&gt;</b></li> 
+             <li lid="1" class="one2"><?php echo get_advname('indexproad_2',$GLOBALS['smarty']->_var['cat_goods']['id'])?><b class="floor-more">&gt;</b></li> 
+             <li lid="2" class="one3"><?php echo get_advname('indexproad_3',$GLOBALS['smarty']->_var['cat_goods']['id'])?><b class="floor-more">&gt;</b></li> 
+          </ul> 
+          
+          <div style=" width:220px; height:283px;position:relative; top:-30px; left:-29px; overflow:hidden;">
+         <ul class="floor-slide-pannel ad_pic" style="position:absolute;"> 
+
+            <li lid="0" class="f_l"><?php echo get_adv('indexproad_1',$GLOBALS['smarty']->_var['cat_goods']['id'])?></li> 
+            <li lid="1" class="f_l"><?php echo get_adv('indexproad_2',$GLOBALS['smarty']->_var['cat_goods']['id'])?></li>
+            <li lid="2" class="f_l"><?php echo get_adv('indexproad_3',$GLOBALS['smarty']->_var['cat_goods']['id'])?></li> 
+         </ul> 
+         </div>
+         
+       </div>
+       
+    
+       
+       <div style="display:block; margin-top:20px;">
+       <b class="floor-line"></b>      
+       <ul class="floor-label-list"> 
+        <!--{foreach from=$goods_cat.cat_clild item=cat name=foo}--> <li> 
+      <a href="{$cat.url}" target="_blank" title="{$cat.name}">{$cat.name}</a></li> 
+      <!--{/foreach}-->   
+       <!--  <li> <a href="#">个人洗护</a> <a href="#">香水</a> <a href="#">护肤套装</a> </li>
+         <li> <a href="#">个人洗护</a> <a href="#">香水</a> <a href="#">护肤套装</a> </li>-->
+       </ul>
+       </div>
+   </div>
+   
+   <!--广告图片切换-->
+   <div id="slideBox1" class="slideBox1" style="display:none" >{* ECSHOP 提醒您：动态载入position_get_adv_small.lbi，显示首页分类小广告 *}{insert name='get_adv_child' ad_arr=$adarr id=$cat_goods.id } 
+  <script type="text/javascript">
+		jQuery(".slideBox1").slide({mainCell:".bd ul",autoPlay:true});
+		</script>
+   <!--广告图片切换-->
+   
+   <!--广告图片-->
+   <div class="grid-col-200 imgs_200 none">
+      <a class="grid-row-140 floor-banner" href="#"> <img src="http://img04.taobaocdn.com/imgextra/i4/556608090/T2SjQpXK0XXXXXXXXX-556608090.jpg" width="199" height="140" alt="天猫男装国际大牌"> </a>
+   <a class="grid-row-140 floor-banner" href="#"> <img src="http://gtms02.alicdn.com/tps/i2/T1Sj6rFN8XXXcyDKMU-199-140.jpg" width="199" height="140" alt="男装时尚馆"> </a>
+   <a class="grid-row-140 floor-banner" href="#"> <img src="http://gtms03.alicdn.com/tps/i3/T1N52XFIRdXXcyDKMU-199-140.jpg" width="199" height="140" alt="男装商务馆"> </a>
+   </div>
+    <!--广告图片-->
+    
+ 
+ <!--文字切换-->
+   <div class="grid-col-200">
+      <div class="floor-rank-slide j_FloorRankSlide" id="floor-rank-slide">
+         <a href="javascript:void(0);" title="下一个" target="_self" class="fp-iconfont rank-trigger rank-trigger-next j_RankTriggerNext">㑤</a>
+         <a href="javascript:void(0);" title="上一个" target="_self" class="fp-iconfont rank-trigger rank-trigger-prev j_RankTriggerPrev">㑥</a>
+          <ul class="rank-slide-nav"> <li class="selected"></li> <li></li> <li class=""></li> </ul>
+          <div class="rank_box" style="position:relative;overflow:hidden;width:175px;height:400px;">
+              <div class="rank-slide-content" style="overflow:; height: 400px; position:absolute;left:10px;top:0;">
+                  
+                  <div class="rank-slide-pannel" style="float: left; overflow: hidden; width: 175px; display: block; ">
+                     <h3 class="floor-rank-title">裸妆粉底热销榜</h3>
+                     <ul class="floor-rank-list"> <li> <i class="rank-num">1</i> <a href="#" data-spm-anchor-id="3.7095809.2000f012.3">韩后植物能量裸妆粉底液</a> </li> <li> <i class="rank-num">2</i> <a href="#">妙巴黎果然美肌精华啫喱粉底液</a> </li> <li> <i class="rank-num">3</i> <a href="#">韩熙贞莹润粉底液</a> </li> <li> <i class="rank-num">4</i> <a href="#">PBA亲肤粉底液</a> </li> <li> <i class="rank-num">5</i> <a href="#">深蓝彩妆感光无瑕粉底</a> </li> <li> <i class="rank-num">6</i> <a href="#">片仔癀养颜粉底霜</a> </li> <li> <i class="rank-num">7</i> <a href="#">雅诗兰黛水凝润颜粉底液</a> </li> <li> <i class="rank-num">8</i> <a href="#">韩后水感丝滑轻盈粉底液</a> </li> <li> <i class="rank-num">9</i> <a href="#">美宝莲矿物水漾亲肤粉底乳</a> </li> <li class="rank-item-last"> <i class="rank-num">10</i> <a href="#">苏菲娜映美焕采防晒控油粉底液</a> </li> </ul>
+                  </div>
+                  <div class="rank-slide-pannel" style="float: left; overflow: hidden; width: 175px; display: block; ">
+                     <h3 class="floor-rank-title">裸妆粉底热销榜</h3>
+                     <ul class="floor-rank-list"> <li> <i class="rank-num">1</i> <a href="#" data-spm-anchor-id="3.7095809.2000f012.3">韩后植物能量裸妆粉底液</a> </li> <li> <i class="rank-num">2</i> <a href="#">妙巴黎果然美肌精华啫喱粉底液</a> </li> <li> <i class="rank-num">3</i> <a href="#">韩熙贞莹润粉底液</a> </li> <li> <i class="rank-num">4</i> <a href="#">PBA亲肤粉底液</a> </li> <li> <i class="rank-num">5</i> <a href="#">深蓝彩妆感光无瑕粉底</a> </li> <li> <i class="rank-num">6</i> <a href="#">片仔癀养颜粉底霜</a> </li> <li> <i class="rank-num">7</i> <a href="#">雅诗兰黛水凝润颜粉底液</a> </li> <li> <i class="rank-num">8</i> <a href="#">韩后水感丝滑轻盈粉底液</a> </li> <li> <i class="rank-num">9</i> <a href="#">美宝莲矿物水漾亲肤粉底乳</a> </li> <li class="rank-item-last"> <i class="rank-num">10</i> <a href="#">苏菲娜映美焕采防晒控油粉底液</a> </li> </ul>
+                  </div>
+                  <div class="rank-slide-pannel" style="float: left; overflow: hidden; width: 175px; display: block; ">
+                     <h3 class="floor-rank-title">裸妆粉底热销榜</h3>
+                     <ul class="floor-rank-list"> <li> <i class="rank-num">1</i> <a href="#" data-spm-anchor-id="3.7095809.2000f012.3">韩后植物能量裸妆粉底液</a> </li> <li> <i class="rank-num">2</i> <a href="#">妙巴黎果然美肌精华啫喱粉底液</a> </li> <li> <i class="rank-num">3</i> <a href="#">韩熙贞莹润粉底液</a> </li> <li> <i class="rank-num">4</i> <a href="#">PBA亲肤粉底液</a> </li> <li> <i class="rank-num">5</i> <a href="#">深蓝彩妆感光无瑕粉底</a> </li> <li> <i class="rank-num">6</i> <a href="#">片仔癀养颜粉底霜</a> </li> <li> <i class="rank-num">7</i> <a href="#">雅诗兰黛水凝润颜粉底液</a> </li> <li> <i class="rank-num">8</i> <a href="#">韩后水感丝滑轻盈粉底液</a> </li> <li> <i class="rank-num">9</i> <a href="#">美宝莲矿物水漾亲肤粉底乳</a> </li> <li class="rank-item-last"> <i class="rank-num">10</i> <a href="#">苏菲娜映美焕采防晒控油粉底液</a> </li> </ul>
+                  </div>
+              
+              </div>
+          </div>
+          
+          
+      </div>
+   
+   </div>
+ <!--文字切换-->
+
+
+   <div class="grid-col-400 floor-banner"> {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告1'} </div>
+
+<div> 
+             <div class="grid-col-200 floor-banner"> 
+              {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告2'}
+              {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告3'}
+            </div> 
+    
+         <div class="grid-col-200 floor-banner floor-banner2"> 
+            {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告4'}
+            {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告5'}
+         </div>
+  </div>
+
+
+</div>
+
+
+
+</div>
+
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<div class="fp-floor fp-floor-nvz">
+
+
+<div class="floor-title">
+  <div class="title_txt"><span></span><a href="{$goods_cat.url}">{$goods_cat.name|escape:html}</a></div>
+  <div class="floor-rec-label">
+      <!--{foreach from=$goods_cat.cat_clild item=cat name=foo}-->
+      <a href="{$cat.url}" target="_blank" title="{$cat.name}">{$cat.name}</a>
+      <!--{/foreach}-->   
+       <a href="{$cat.url}" target="_blank">更多</a> 
+  </div>
+</div>
+
+<div class="floor-content grid-container-1190">
+   <div class="grid-col-190 floor-show">
+       <div class="floor-slide"> 
+          <ul class="floor-slide-nav ad_text"> 
+             <li lid="0" class="floor-nav-selected one1"><?php echo get_advname('indexproad_1',$GLOBALS['smarty']->_var['cat_goods']['id'])?><b class="floor-more">&gt;</b></li> 
+             <li lid="1" class="one2"><?php echo get_advname('indexproad_2',$GLOBALS['smarty']->_var['cat_goods']['id'])?><b class="floor-more">&gt;</b></li> 
+             <li lid="2" class="one3"><?php echo get_advname('indexproad_3',$GLOBALS['smarty']->_var['cat_goods']['id'])?><b class="floor-more">&gt;</b></li> 
+          </ul> 
+          
+          <div style=" width:220px; height:283px;position:relative; top:-30px; left:-29px; overflow:hidden;">
+         <ul class="floor-slide-pannel ad_pic" style="position:absolute;"> 
+
+            <li lid="0" class="f_l"><?php echo get_adv('indexproad_1',$GLOBALS['smarty']->_var['cat_goods']['id'])?></li> 
+            <li lid="1" class="f_l"><?php echo get_adv('indexproad_2',$GLOBALS['smarty']->_var['cat_goods']['id'])?></li>
+            <li lid="2" class="f_l"><?php echo get_adv('indexproad_3',$GLOBALS['smarty']->_var['cat_goods']['id'])?></li> 
+         </ul> 
+         </div>
+         
+       </div>
+       
+    
+       
+       <div style="display:block; margin-top:20px;">
+       <b class="floor-line"></b>      
+       <ul class="floor-label-list"> 
+        <!--{foreach from=$goods_cat.cat_clild item=cat name=foo}--> <li> 
+      <a href="{$cat.url}" target="_blank" title="{$cat.name}">{$cat.name}</a></li> 
+      <!--{/foreach}-->   
+       <!--  <li> <a href="#">个人洗护</a> <a href="#">香水</a> <a href="#">护肤套装</a> </li>
+         <li> <a href="#">个人洗护</a> <a href="#">香水</a> <a href="#">护肤套装</a> </li>-->
+       </ul>
+       </div>
+   </div>
+   
+   <!--广告图片切换-->
+   <div id="slideBox1" class="slideBox1" style="display:none" >{* ECSHOP 提醒您：动态载入position_get_adv_small.lbi，显示首页分类小广告 *}{insert name='get_adv_child' ad_arr=$adarr id=$cat_goods.id } 
+  <script type="text/javascript">
+		jQuery(".slideBox1").slide({mainCell:".bd ul",autoPlay:true});
+		</script>
+   <!--广告图片切换-->
+   
+   <!--广告图片-->
+   <div class="grid-col-200 imgs_200 none">
+      <a class="grid-row-140 floor-banner" href="#"> <img src="http://img04.taobaocdn.com/imgextra/i4/556608090/T2SjQpXK0XXXXXXXXX-556608090.jpg" width="199" height="140" alt="天猫男装国际大牌"> </a>
+   <a class="grid-row-140 floor-banner" href="#"> <img src="http://gtms02.alicdn.com/tps/i2/T1Sj6rFN8XXXcyDKMU-199-140.jpg" width="199" height="140" alt="男装时尚馆"> </a>
+   <a class="grid-row-140 floor-banner" href="#"> <img src="http://gtms03.alicdn.com/tps/i3/T1N52XFIRdXXcyDKMU-199-140.jpg" width="199" height="140" alt="男装商务馆"> </a>
+   </div>
+    <!--广告图片-->
+    
+ 
+ <!--文字切换-->
+   <div class="grid-col-200">
+      <div class="floor-rank-slide j_FloorRankSlide" id="floor-rank-slide">
+         <a href="javascript:void(0);" title="下一个" target="_self" class="fp-iconfont rank-trigger rank-trigger-next j_RankTriggerNext">㑤</a>
+         <a href="javascript:void(0);" title="上一个" target="_self" class="fp-iconfont rank-trigger rank-trigger-prev j_RankTriggerPrev">㑥</a>
+          <ul class="rank-slide-nav"> <li class="selected"></li> <li></li> <li class=""></li> </ul>
+          <div class="rank_box" style="position:relative;overflow:hidden;width:175px;height:400px;">
+              <div class="rank-slide-content" style="overflow:; height: 400px; position:absolute;left:10px;top:0;">
+                  
+                  <div class="rank-slide-pannel" style="float: left; overflow: hidden; width: 175px; display: block; ">
+                     <h3 class="floor-rank-title">裸妆粉底热销榜</h3>
+                     <ul class="floor-rank-list"> <li> <i class="rank-num">1</i> <a href="#" data-spm-anchor-id="3.7095809.2000f012.3">韩后植物能量裸妆粉底液</a> </li> <li> <i class="rank-num">2</i> <a href="#">妙巴黎果然美肌精华啫喱粉底液</a> </li> <li> <i class="rank-num">3</i> <a href="#">韩熙贞莹润粉底液</a> </li> <li> <i class="rank-num">4</i> <a href="#">PBA亲肤粉底液</a> </li> <li> <i class="rank-num">5</i> <a href="#">深蓝彩妆感光无瑕粉底</a> </li> <li> <i class="rank-num">6</i> <a href="#">片仔癀养颜粉底霜</a> </li> <li> <i class="rank-num">7</i> <a href="#">雅诗兰黛水凝润颜粉底液</a> </li> <li> <i class="rank-num">8</i> <a href="#">韩后水感丝滑轻盈粉底液</a> </li> <li> <i class="rank-num">9</i> <a href="#">美宝莲矿物水漾亲肤粉底乳</a> </li> <li class="rank-item-last"> <i class="rank-num">10</i> <a href="#">苏菲娜映美焕采防晒控油粉底液</a> </li> </ul>
+                  </div>
+                  <div class="rank-slide-pannel" style="float: left; overflow: hidden; width: 175px; display: block; ">
+                     <h3 class="floor-rank-title">裸妆粉底热销榜</h3>
+                     <ul class="floor-rank-list"> <li> <i class="rank-num">1</i> <a href="#" data-spm-anchor-id="3.7095809.2000f012.3">韩后植物能量裸妆粉底液</a> </li> <li> <i class="rank-num">2</i> <a href="#">妙巴黎果然美肌精华啫喱粉底液</a> </li> <li> <i class="rank-num">3</i> <a href="#">韩熙贞莹润粉底液</a> </li> <li> <i class="rank-num">4</i> <a href="#">PBA亲肤粉底液</a> </li> <li> <i class="rank-num">5</i> <a href="#">深蓝彩妆感光无瑕粉底</a> </li> <li> <i class="rank-num">6</i> <a href="#">片仔癀养颜粉底霜</a> </li> <li> <i class="rank-num">7</i> <a href="#">雅诗兰黛水凝润颜粉底液</a> </li> <li> <i class="rank-num">8</i> <a href="#">韩后水感丝滑轻盈粉底液</a> </li> <li> <i class="rank-num">9</i> <a href="#">美宝莲矿物水漾亲肤粉底乳</a> </li> <li class="rank-item-last"> <i class="rank-num">10</i> <a href="#">苏菲娜映美焕采防晒控油粉底液</a> </li> </ul>
+                  </div>
+                  <div class="rank-slide-pannel" style="float: left; overflow: hidden; width: 175px; display: block; ">
+                     <h3 class="floor-rank-title">裸妆粉底热销榜</h3>
+                     <ul class="floor-rank-list"> <li> <i class="rank-num">1</i> <a href="#" data-spm-anchor-id="3.7095809.2000f012.3">韩后植物能量裸妆粉底液</a> </li> <li> <i class="rank-num">2</i> <a href="#">妙巴黎果然美肌精华啫喱粉底液</a> </li> <li> <i class="rank-num">3</i> <a href="#">韩熙贞莹润粉底液</a> </li> <li> <i class="rank-num">4</i> <a href="#">PBA亲肤粉底液</a> </li> <li> <i class="rank-num">5</i> <a href="#">深蓝彩妆感光无瑕粉底</a> </li> <li> <i class="rank-num">6</i> <a href="#">片仔癀养颜粉底霜</a> </li> <li> <i class="rank-num">7</i> <a href="#">雅诗兰黛水凝润颜粉底液</a> </li> <li> <i class="rank-num">8</i> <a href="#">韩后水感丝滑轻盈粉底液</a> </li> <li> <i class="rank-num">9</i> <a href="#">美宝莲矿物水漾亲肤粉底乳</a> </li> <li class="rank-item-last"> <i class="rank-num">10</i> <a href="#">苏菲娜映美焕采防晒控油粉底液</a> </li> </ul>
+                  </div>
+              
+              </div>
+          </div>
+          
+          
+      </div>
+   
+   </div>
+ <!--文字切换-->
+
+
+   <div class="grid-col-400 floor-banner"> {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告1'} </div>
+
+<div> 
+             <div class="grid-col-200 floor-banner"> 
+              {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告2'}
+              {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告3'}
+            </div> 
+    
+         <div class="grid-col-200 floor-banner floor-banner2"> 
+            {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告4'}
+            {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告5'}
+         </div>
+  </div>
+
+
+</div>
+
+
+
+</div>
+
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<div class="fp-floor fp-floor-nvz">
+
+
+<div class="floor-title">
+  <div class="title_txt"><span></span><a href="{$goods_cat.url}">{$goods_cat.name|escape:html}</a></div>
+  <div class="floor-rec-label">
+      <!--{foreach from=$goods_cat.cat_clild item=cat name=foo}-->
+      <a href="{$cat.url}" target="_blank" title="{$cat.name}">{$cat.name}</a>
+      <!--{/foreach}-->   
+       <a href="{$cat.url}" target="_blank">更多</a> 
+  </div>
+</div>
+
+<div class="floor-content grid-container-1190">
+   <div class="grid-col-190 floor-show">
+       <div class="floor-slide"> 
+          <ul class="floor-slide-nav ad_text"> 
+             <li lid="0" class="floor-nav-selected one1"><?php echo get_advname('indexproad_1',$GLOBALS['smarty']->_var['cat_goods']['id'])?><b class="floor-more">&gt;</b></li> 
+             <li lid="1" class="one2"><?php echo get_advname('indexproad_2',$GLOBALS['smarty']->_var['cat_goods']['id'])?><b class="floor-more">&gt;</b></li> 
+             <li lid="2" class="one3"><?php echo get_advname('indexproad_3',$GLOBALS['smarty']->_var['cat_goods']['id'])?><b class="floor-more">&gt;</b></li> 
+          </ul> 
+          
+          <div style=" width:220px; height:283px;position:relative; top:-30px; left:-29px; overflow:hidden;">
+         <ul class="floor-slide-pannel ad_pic" style="position:absolute;"> 
+
+            <li lid="0" class="f_l"><?php echo get_adv('indexproad_1',$GLOBALS['smarty']->_var['cat_goods']['id'])?></li> 
+            <li lid="1" class="f_l"><?php echo get_adv('indexproad_2',$GLOBALS['smarty']->_var['cat_goods']['id'])?></li>
+            <li lid="2" class="f_l"><?php echo get_adv('indexproad_3',$GLOBALS['smarty']->_var['cat_goods']['id'])?></li> 
+         </ul> 
+         </div>
+         
+       </div>
+       
+    
+       
+       <div style="display:block; margin-top:20px;">
+       <b class="floor-line"></b>      
+       <ul class="floor-label-list"> 
+        <!--{foreach from=$goods_cat.cat_clild item=cat name=foo}--> <li> 
+      <a href="{$cat.url}" target="_blank" title="{$cat.name}">{$cat.name}</a></li> 
+      <!--{/foreach}-->   
+       <!--  <li> <a href="#">个人洗护</a> <a href="#">香水</a> <a href="#">护肤套装</a> </li>
+         <li> <a href="#">个人洗护</a> <a href="#">香水</a> <a href="#">护肤套装</a> </li>-->
+       </ul>
+       </div>
+   </div>
+   
+   <!--广告图片切换-->
+   <div id="slideBox1" class="slideBox1" style="display:none" >{* ECSHOP 提醒您：动态载入position_get_adv_small.lbi，显示首页分类小广告 *}{insert name='get_adv_child' ad_arr=$adarr id=$cat_goods.id } 
+  <script type="text/javascript">
+		jQuery(".slideBox1").slide({mainCell:".bd ul",autoPlay:true});
+		</script>
+   <!--广告图片切换-->
+   
+   <!--广告图片-->
+   <div class="grid-col-200 imgs_200 none">
+      <a class="grid-row-140 floor-banner" href="#"> <img src="http://img04.taobaocdn.com/imgextra/i4/556608090/T2SjQpXK0XXXXXXXXX-556608090.jpg" width="199" height="140" alt="天猫男装国际大牌"> </a>
+   <a class="grid-row-140 floor-banner" href="#"> <img src="http://gtms02.alicdn.com/tps/i2/T1Sj6rFN8XXXcyDKMU-199-140.jpg" width="199" height="140" alt="男装时尚馆"> </a>
+   <a class="grid-row-140 floor-banner" href="#"> <img src="http://gtms03.alicdn.com/tps/i3/T1N52XFIRdXXcyDKMU-199-140.jpg" width="199" height="140" alt="男装商务馆"> </a>
+   </div>
+    <!--广告图片-->
+    
+ 
+ <!--文字切换-->
+   <div class="grid-col-200">
+      <div class="floor-rank-slide j_FloorRankSlide" id="floor-rank-slide">
+         <a href="javascript:void(0);" title="下一个" target="_self" class="fp-iconfont rank-trigger rank-trigger-next j_RankTriggerNext">㑤</a>
+         <a href="javascript:void(0);" title="上一个" target="_self" class="fp-iconfont rank-trigger rank-trigger-prev j_RankTriggerPrev">㑥</a>
+          <ul class="rank-slide-nav"> <li class="selected"></li> <li></li> <li class=""></li> </ul>
+          <div class="rank_box" style="position:relative;overflow:hidden;width:175px;height:400px;">
+              <div class="rank-slide-content" style="overflow:; height: 400px; position:absolute;left:10px;top:0;">
+                  
+                  <div class="rank-slide-pannel" style="float: left; overflow: hidden; width: 175px; display: block; ">
+                     <h3 class="floor-rank-title">裸妆粉底热销榜</h3>
+                     <ul class="floor-rank-list"> <li> <i class="rank-num">1</i> <a href="#" data-spm-anchor-id="3.7095809.2000f012.3">韩后植物能量裸妆粉底液</a> </li> <li> <i class="rank-num">2</i> <a href="#">妙巴黎果然美肌精华啫喱粉底液</a> </li> <li> <i class="rank-num">3</i> <a href="#">韩熙贞莹润粉底液</a> </li> <li> <i class="rank-num">4</i> <a href="#">PBA亲肤粉底液</a> </li> <li> <i class="rank-num">5</i> <a href="#">深蓝彩妆感光无瑕粉底</a> </li> <li> <i class="rank-num">6</i> <a href="#">片仔癀养颜粉底霜</a> </li> <li> <i class="rank-num">7</i> <a href="#">雅诗兰黛水凝润颜粉底液</a> </li> <li> <i class="rank-num">8</i> <a href="#">韩后水感丝滑轻盈粉底液</a> </li> <li> <i class="rank-num">9</i> <a href="#">美宝莲矿物水漾亲肤粉底乳</a> </li> <li class="rank-item-last"> <i class="rank-num">10</i> <a href="#">苏菲娜映美焕采防晒控油粉底液</a> </li> </ul>
+                  </div>
+                  <div class="rank-slide-pannel" style="float: left; overflow: hidden; width: 175px; display: block; ">
+                     <h3 class="floor-rank-title">裸妆粉底热销榜</h3>
+                     <ul class="floor-rank-list"> <li> <i class="rank-num">1</i> <a href="#" data-spm-anchor-id="3.7095809.2000f012.3">韩后植物能量裸妆粉底液</a> </li> <li> <i class="rank-num">2</i> <a href="#">妙巴黎果然美肌精华啫喱粉底液</a> </li> <li> <i class="rank-num">3</i> <a href="#">韩熙贞莹润粉底液</a> </li> <li> <i class="rank-num">4</i> <a href="#">PBA亲肤粉底液</a> </li> <li> <i class="rank-num">5</i> <a href="#">深蓝彩妆感光无瑕粉底</a> </li> <li> <i class="rank-num">6</i> <a href="#">片仔癀养颜粉底霜</a> </li> <li> <i class="rank-num">7</i> <a href="#">雅诗兰黛水凝润颜粉底液</a> </li> <li> <i class="rank-num">8</i> <a href="#">韩后水感丝滑轻盈粉底液</a> </li> <li> <i class="rank-num">9</i> <a href="#">美宝莲矿物水漾亲肤粉底乳</a> </li> <li class="rank-item-last"> <i class="rank-num">10</i> <a href="#">苏菲娜映美焕采防晒控油粉底液</a> </li> </ul>
+                  </div>
+                  <div class="rank-slide-pannel" style="float: left; overflow: hidden; width: 175px; display: block; ">
+                     <h3 class="floor-rank-title">裸妆粉底热销榜</h3>
+                     <ul class="floor-rank-list"> <li> <i class="rank-num">1</i> <a href="#" data-spm-anchor-id="3.7095809.2000f012.3">韩后植物能量裸妆粉底液</a> </li> <li> <i class="rank-num">2</i> <a href="#">妙巴黎果然美肌精华啫喱粉底液</a> </li> <li> <i class="rank-num">3</i> <a href="#">韩熙贞莹润粉底液</a> </li> <li> <i class="rank-num">4</i> <a href="#">PBA亲肤粉底液</a> </li> <li> <i class="rank-num">5</i> <a href="#">深蓝彩妆感光无瑕粉底</a> </li> <li> <i class="rank-num">6</i> <a href="#">片仔癀养颜粉底霜</a> </li> <li> <i class="rank-num">7</i> <a href="#">雅诗兰黛水凝润颜粉底液</a> </li> <li> <i class="rank-num">8</i> <a href="#">韩后水感丝滑轻盈粉底液</a> </li> <li> <i class="rank-num">9</i> <a href="#">美宝莲矿物水漾亲肤粉底乳</a> </li> <li class="rank-item-last"> <i class="rank-num">10</i> <a href="#">苏菲娜映美焕采防晒控油粉底液</a> </li> </ul>
+                  </div>
+              
+              </div>
+          </div>
+          
+          
+      </div>
+   
+   </div>
+ <!--文字切换-->
+
+
+   <div class="grid-col-400 floor-banner"> {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告1'} </div>
+
+<div> 
+             <div class="grid-col-200 floor-banner"> 
+              {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告2'}
+              {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告3'}
+            </div> 
+    
+         <div class="grid-col-200 floor-banner floor-banner2"> 
+            {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告4'}
+            {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告5'}
+         </div>
+  </div>
+
+
+</div>
+
+
+
+</div>
+
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<div class="fp-floor fp-floor-nvz">
+
+
+<div class="floor-title">
+  <div class="title_txt"><span></span><a href="{$goods_cat.url}">{$goods_cat.name|escape:html}</a></div>
+  <div class="floor-rec-label">
+      <!--{foreach from=$goods_cat.cat_clild item=cat name=foo}-->
+      <a href="{$cat.url}" target="_blank" title="{$cat.name}">{$cat.name}</a>
+      <!--{/foreach}-->   
+       <a href="{$cat.url}" target="_blank">更多</a> 
+  </div>
+</div>
+
+<div class="floor-content grid-container-1190">
+   <div class="grid-col-190 floor-show">
+       <div class="floor-slide"> 
+          <ul class="floor-slide-nav ad_text"> 
+             <li lid="0" class="floor-nav-selected one1"><?php echo get_advname('indexproad_1',$GLOBALS['smarty']->_var['cat_goods']['id'])?><b class="floor-more">&gt;</b></li> 
+             <li lid="1" class="one2"><?php echo get_advname('indexproad_2',$GLOBALS['smarty']->_var['cat_goods']['id'])?><b class="floor-more">&gt;</b></li> 
+             <li lid="2" class="one3"><?php echo get_advname('indexproad_3',$GLOBALS['smarty']->_var['cat_goods']['id'])?><b class="floor-more">&gt;</b></li> 
+          </ul> 
+          
+          <div style=" width:220px; height:283px;position:relative; top:-30px; left:-29px; overflow:hidden;">
+         <ul class="floor-slide-pannel ad_pic" style="position:absolute;"> 
+
+            <li lid="0" class="f_l"><?php echo get_adv('indexproad_1',$GLOBALS['smarty']->_var['cat_goods']['id'])?></li> 
+            <li lid="1" class="f_l"><?php echo get_adv('indexproad_2',$GLOBALS['smarty']->_var['cat_goods']['id'])?></li>
+            <li lid="2" class="f_l"><?php echo get_adv('indexproad_3',$GLOBALS['smarty']->_var['cat_goods']['id'])?></li> 
+         </ul> 
+         </div>
+         
+       </div>
+       
+    
+       
+       <div style="display:block; margin-top:20px;">
+       <b class="floor-line"></b>      
+       <ul class="floor-label-list"> 
+        <!--{foreach from=$goods_cat.cat_clild item=cat name=foo}--> <li> 
+      <a href="{$cat.url}" target="_blank" title="{$cat.name}">{$cat.name}</a></li> 
+      <!--{/foreach}-->   
+       <!--  <li> <a href="#">个人洗护</a> <a href="#">香水</a> <a href="#">护肤套装</a> </li>
+         <li> <a href="#">个人洗护</a> <a href="#">香水</a> <a href="#">护肤套装</a> </li>-->
+       </ul>
+       </div>
+   </div>
+   
+   <!--广告图片切换-->
+   <div id="slideBox1" class="slideBox1" style="display:none" >{* ECSHOP 提醒您：动态载入position_get_adv_small.lbi，显示首页分类小广告 *}{insert name='get_adv_child' ad_arr=$adarr id=$cat_goods.id } 
+  <script type="text/javascript">
+		jQuery(".slideBox1").slide({mainCell:".bd ul",autoPlay:true});
+		</script>
+   <!--广告图片切换-->
+   
+   <!--广告图片-->
+   <div class="grid-col-200 imgs_200 none">
+      <a class="grid-row-140 floor-banner" href="#"> <img src="http://img04.taobaocdn.com/imgextra/i4/556608090/T2SjQpXK0XXXXXXXXX-556608090.jpg" width="199" height="140" alt="天猫男装国际大牌"> </a>
+   <a class="grid-row-140 floor-banner" href="#"> <img src="http://gtms02.alicdn.com/tps/i2/T1Sj6rFN8XXXcyDKMU-199-140.jpg" width="199" height="140" alt="男装时尚馆"> </a>
+   <a class="grid-row-140 floor-banner" href="#"> <img src="http://gtms03.alicdn.com/tps/i3/T1N52XFIRdXXcyDKMU-199-140.jpg" width="199" height="140" alt="男装商务馆"> </a>
+   </div>
+    <!--广告图片-->
+    
+ 
+ <!--文字切换-->
+   <div class="grid-col-200">
+      <div class="floor-rank-slide j_FloorRankSlide" id="floor-rank-slide">
+         <a href="javascript:void(0);" title="下一个" target="_self" class="fp-iconfont rank-trigger rank-trigger-next j_RankTriggerNext">㑤</a>
+         <a href="javascript:void(0);" title="上一个" target="_self" class="fp-iconfont rank-trigger rank-trigger-prev j_RankTriggerPrev">㑥</a>
+          <ul class="rank-slide-nav"> <li class="selected"></li> <li></li> <li class=""></li> </ul>
+          <div class="rank_box" style="position:relative;overflow:hidden;width:175px;height:400px;">
+              <div class="rank-slide-content" style="overflow:; height: 400px; position:absolute;left:10px;top:0;">
+                  
+                  <div class="rank-slide-pannel" style="float: left; overflow: hidden; width: 175px; display: block; ">
+                     <h3 class="floor-rank-title">裸妆粉底热销榜</h3>
+                     <ul class="floor-rank-list"> <li> <i class="rank-num">1</i> <a href="#" data-spm-anchor-id="3.7095809.2000f012.3">韩后植物能量裸妆粉底液</a> </li> <li> <i class="rank-num">2</i> <a href="#">妙巴黎果然美肌精华啫喱粉底液</a> </li> <li> <i class="rank-num">3</i> <a href="#">韩熙贞莹润粉底液</a> </li> <li> <i class="rank-num">4</i> <a href="#">PBA亲肤粉底液</a> </li> <li> <i class="rank-num">5</i> <a href="#">深蓝彩妆感光无瑕粉底</a> </li> <li> <i class="rank-num">6</i> <a href="#">片仔癀养颜粉底霜</a> </li> <li> <i class="rank-num">7</i> <a href="#">雅诗兰黛水凝润颜粉底液</a> </li> <li> <i class="rank-num">8</i> <a href="#">韩后水感丝滑轻盈粉底液</a> </li> <li> <i class="rank-num">9</i> <a href="#">美宝莲矿物水漾亲肤粉底乳</a> </li> <li class="rank-item-last"> <i class="rank-num">10</i> <a href="#">苏菲娜映美焕采防晒控油粉底液</a> </li> </ul>
+                  </div>
+                  <div class="rank-slide-pannel" style="float: left; overflow: hidden; width: 175px; display: block; ">
+                     <h3 class="floor-rank-title">裸妆粉底热销榜</h3>
+                     <ul class="floor-rank-list"> <li> <i class="rank-num">1</i> <a href="#" data-spm-anchor-id="3.7095809.2000f012.3">韩后植物能量裸妆粉底液</a> </li> <li> <i class="rank-num">2</i> <a href="#">妙巴黎果然美肌精华啫喱粉底液</a> </li> <li> <i class="rank-num">3</i> <a href="#">韩熙贞莹润粉底液</a> </li> <li> <i class="rank-num">4</i> <a href="#">PBA亲肤粉底液</a> </li> <li> <i class="rank-num">5</i> <a href="#">深蓝彩妆感光无瑕粉底</a> </li> <li> <i class="rank-num">6</i> <a href="#">片仔癀养颜粉底霜</a> </li> <li> <i class="rank-num">7</i> <a href="#">雅诗兰黛水凝润颜粉底液</a> </li> <li> <i class="rank-num">8</i> <a href="#">韩后水感丝滑轻盈粉底液</a> </li> <li> <i class="rank-num">9</i> <a href="#">美宝莲矿物水漾亲肤粉底乳</a> </li> <li class="rank-item-last"> <i class="rank-num">10</i> <a href="#">苏菲娜映美焕采防晒控油粉底液</a> </li> </ul>
+                  </div>
+                  <div class="rank-slide-pannel" style="float: left; overflow: hidden; width: 175px; display: block; ">
+                     <h3 class="floor-rank-title">裸妆粉底热销榜</h3>
+                     <ul class="floor-rank-list"> <li> <i class="rank-num">1</i> <a href="#" data-spm-anchor-id="3.7095809.2000f012.3">韩后植物能量裸妆粉底液</a> </li> <li> <i class="rank-num">2</i> <a href="#">妙巴黎果然美肌精华啫喱粉底液</a> </li> <li> <i class="rank-num">3</i> <a href="#">韩熙贞莹润粉底液</a> </li> <li> <i class="rank-num">4</i> <a href="#">PBA亲肤粉底液</a> </li> <li> <i class="rank-num">5</i> <a href="#">深蓝彩妆感光无瑕粉底</a> </li> <li> <i class="rank-num">6</i> <a href="#">片仔癀养颜粉底霜</a> </li> <li> <i class="rank-num">7</i> <a href="#">雅诗兰黛水凝润颜粉底液</a> </li> <li> <i class="rank-num">8</i> <a href="#">韩后水感丝滑轻盈粉底液</a> </li> <li> <i class="rank-num">9</i> <a href="#">美宝莲矿物水漾亲肤粉底乳</a> </li> <li class="rank-item-last"> <i class="rank-num">10</i> <a href="#">苏菲娜映美焕采防晒控油粉底液</a> </li> </ul>
+                  </div>
+              
+              </div>
+          </div>
+          
+          
+      </div>
+   
+   </div>
+ <!--文字切换-->
+
+
+   <div class="grid-col-400 floor-banner"> {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告1'} </div>
+
+<div> 
+             <div class="grid-col-200 floor-banner"> 
+              {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告2'}
+              {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告3'}
+            </div> 
+    
+         <div class="grid-col-200 floor-banner floor-banner2"> 
+            {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告4'}
+            {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告5'}
+         </div>
+  </div>
+
+
+</div>
+
+
+
+</div>
+
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
+
+<div class="fp-floor fp-floor-nvz">
+
+
+<div class="floor-title">
+  <div class="title_txt"><span></span><a href="{$goods_cat.url}">{$goods_cat.name|escape:html}</a></div>
+  <div class="floor-rec-label">
+      <!--{foreach from=$goods_cat.cat_clild item=cat name=foo}-->
+      <a href="{$cat.url}" target="_blank" title="{$cat.name}">{$cat.name}</a>
+      <!--{/foreach}-->   
+       <a href="{$cat.url}" target="_blank">更多</a> 
+  </div>
+</div>
+
+<div class="floor-content grid-container-1190">
+   <div class="grid-col-190 floor-show">
+       <div class="floor-slide"> 
+          <ul class="floor-slide-nav ad_text"> 
+             <li lid="0" class="floor-nav-selected one1"><?php echo get_advname('indexproad_1',$GLOBALS['smarty']->_var['cat_goods']['id'])?><b class="floor-more">&gt;</b></li> 
+             <li lid="1" class="one2"><?php echo get_advname('indexproad_2',$GLOBALS['smarty']->_var['cat_goods']['id'])?><b class="floor-more">&gt;</b></li> 
+             <li lid="2" class="one3"><?php echo get_advname('indexproad_3',$GLOBALS['smarty']->_var['cat_goods']['id'])?><b class="floor-more">&gt;</b></li> 
+          </ul> 
+          
+          <div style=" width:220px; height:283px;position:relative; top:-30px; left:-29px; overflow:hidden;">
+         <ul class="floor-slide-pannel ad_pic" style="position:absolute;"> 
+
+            <li lid="0" class="f_l"><?php echo get_adv('indexproad_1',$GLOBALS['smarty']->_var['cat_goods']['id'])?></li> 
+            <li lid="1" class="f_l"><?php echo get_adv('indexproad_2',$GLOBALS['smarty']->_var['cat_goods']['id'])?></li>
+            <li lid="2" class="f_l"><?php echo get_adv('indexproad_3',$GLOBALS['smarty']->_var['cat_goods']['id'])?></li> 
+         </ul> 
+         </div>
+         
+       </div>
+       
+    
+       
+       <div style="display:block; margin-top:20px;">
+       <b class="floor-line"></b>      
+       <ul class="floor-label-list"> 
+        <!--{foreach from=$goods_cat.cat_clild item=cat name=foo}--> <li> 
+      <a href="{$cat.url}" target="_blank" title="{$cat.name}">{$cat.name}</a></li> 
+      <!--{/foreach}-->   
+       <!--  <li> <a href="#">个人洗护</a> <a href="#">香水</a> <a href="#">护肤套装</a> </li>
+         <li> <a href="#">个人洗护</a> <a href="#">香水</a> <a href="#">护肤套装</a> </li>-->
+       </ul>
+       </div>
+   </div>
+   
+   <!--广告图片切换-->
+   <div id="slideBox1" class="slideBox1" style="display:none" >{* ECSHOP 提醒您：动态载入position_get_adv_small.lbi，显示首页分类小广告 *}{insert name='get_adv_child' ad_arr=$adarr id=$cat_goods.id } 
+  <script type="text/javascript">
+		jQuery(".slideBox1").slide({mainCell:".bd ul",autoPlay:true});
+		</script>
+   <!--广告图片切换-->
+   
+   <!--广告图片-->
+   <div class="grid-col-200 imgs_200 none">
+      <a class="grid-row-140 floor-banner" href="#"> <img src="http://img04.taobaocdn.com/imgextra/i4/556608090/T2SjQpXK0XXXXXXXXX-556608090.jpg" width="199" height="140" alt="天猫男装国际大牌"> </a>
+   <a class="grid-row-140 floor-banner" href="#"> <img src="http://gtms02.alicdn.com/tps/i2/T1Sj6rFN8XXXcyDKMU-199-140.jpg" width="199" height="140" alt="男装时尚馆"> </a>
+   <a class="grid-row-140 floor-banner" href="#"> <img src="http://gtms03.alicdn.com/tps/i3/T1N52XFIRdXXcyDKMU-199-140.jpg" width="199" height="140" alt="男装商务馆"> </a>
+   </div>
+    <!--广告图片-->
+    
+ 
+ <!--文字切换-->
+   <div class="grid-col-200">
+      <div class="floor-rank-slide j_FloorRankSlide" id="floor-rank-slide">
+         <a href="javascript:void(0);" title="下一个" target="_self" class="fp-iconfont rank-trigger rank-trigger-next j_RankTriggerNext">㑤</a>
+         <a href="javascript:void(0);" title="上一个" target="_self" class="fp-iconfont rank-trigger rank-trigger-prev j_RankTriggerPrev">㑥</a>
+          <ul class="rank-slide-nav"> <li class="selected"></li> <li></li> <li class=""></li> </ul>
+          <div class="rank_box" style="position:relative;overflow:hidden;width:175px;height:400px;">
+              <div class="rank-slide-content" style="overflow:; height: 400px; position:absolute;left:10px;top:0;">
+                  
+                  <div class="rank-slide-pannel" style="float: left; overflow: hidden; width: 175px; display: block; ">
+                     <h3 class="floor-rank-title">裸妆粉底热销榜</h3>
+                     <ul class="floor-rank-list"> <li> <i class="rank-num">1</i> <a href="#" data-spm-anchor-id="3.7095809.2000f012.3">韩后植物能量裸妆粉底液</a> </li> <li> <i class="rank-num">2</i> <a href="#">妙巴黎果然美肌精华啫喱粉底液</a> </li> <li> <i class="rank-num">3</i> <a href="#">韩熙贞莹润粉底液</a> </li> <li> <i class="rank-num">4</i> <a href="#">PBA亲肤粉底液</a> </li> <li> <i class="rank-num">5</i> <a href="#">深蓝彩妆感光无瑕粉底</a> </li> <li> <i class="rank-num">6</i> <a href="#">片仔癀养颜粉底霜</a> </li> <li> <i class="rank-num">7</i> <a href="#">雅诗兰黛水凝润颜粉底液</a> </li> <li> <i class="rank-num">8</i> <a href="#">韩后水感丝滑轻盈粉底液</a> </li> <li> <i class="rank-num">9</i> <a href="#">美宝莲矿物水漾亲肤粉底乳</a> </li> <li class="rank-item-last"> <i class="rank-num">10</i> <a href="#">苏菲娜映美焕采防晒控油粉底液</a> </li> </ul>
+                  </div>
+                  <div class="rank-slide-pannel" style="float: left; overflow: hidden; width: 175px; display: block; ">
+                     <h3 class="floor-rank-title">裸妆粉底热销榜</h3>
+                     <ul class="floor-rank-list"> <li> <i class="rank-num">1</i> <a href="#" data-spm-anchor-id="3.7095809.2000f012.3">韩后植物能量裸妆粉底液</a> </li> <li> <i class="rank-num">2</i> <a href="#">妙巴黎果然美肌精华啫喱粉底液</a> </li> <li> <i class="rank-num">3</i> <a href="#">韩熙贞莹润粉底液</a> </li> <li> <i class="rank-num">4</i> <a href="#">PBA亲肤粉底液</a> </li> <li> <i class="rank-num">5</i> <a href="#">深蓝彩妆感光无瑕粉底</a> </li> <li> <i class="rank-num">6</i> <a href="#">片仔癀养颜粉底霜</a> </li> <li> <i class="rank-num">7</i> <a href="#">雅诗兰黛水凝润颜粉底液</a> </li> <li> <i class="rank-num">8</i> <a href="#">韩后水感丝滑轻盈粉底液</a> </li> <li> <i class="rank-num">9</i> <a href="#">美宝莲矿物水漾亲肤粉底乳</a> </li> <li class="rank-item-last"> <i class="rank-num">10</i> <a href="#">苏菲娜映美焕采防晒控油粉底液</a> </li> </ul>
+                  </div>
+                  <div class="rank-slide-pannel" style="float: left; overflow: hidden; width: 175px; display: block; ">
+                     <h3 class="floor-rank-title">裸妆粉底热销榜</h3>
+                     <ul class="floor-rank-list"> <li> <i class="rank-num">1</i> <a href="#" data-spm-anchor-id="3.7095809.2000f012.3">韩后植物能量裸妆粉底液</a> </li> <li> <i class="rank-num">2</i> <a href="#">妙巴黎果然美肌精华啫喱粉底液</a> </li> <li> <i class="rank-num">3</i> <a href="#">韩熙贞莹润粉底液</a> </li> <li> <i class="rank-num">4</i> <a href="#">PBA亲肤粉底液</a> </li> <li> <i class="rank-num">5</i> <a href="#">深蓝彩妆感光无瑕粉底</a> </li> <li> <i class="rank-num">6</i> <a href="#">片仔癀养颜粉底霜</a> </li> <li> <i class="rank-num">7</i> <a href="#">雅诗兰黛水凝润颜粉底液</a> </li> <li> <i class="rank-num">8</i> <a href="#">韩后水感丝滑轻盈粉底液</a> </li> <li> <i class="rank-num">9</i> <a href="#">美宝莲矿物水漾亲肤粉底乳</a> </li> <li class="rank-item-last"> <i class="rank-num">10</i> <a href="#">苏菲娜映美焕采防晒控油粉底液</a> </li> </ul>
+                  </div>
+              
+              </div>
+          </div>
+          
+          
+      </div>
+   
+   </div>
+ <!--文字切换-->
+
+
+   <div class="grid-col-400 floor-banner"> {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告1'} </div>
+
+<div> 
+             <div class="grid-col-200 floor-banner"> 
+              {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告2'}
+              {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告3'}
+            </div> 
+    
+         <div class="grid-col-200 floor-banner floor-banner2"> 
+            {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告4'}
+            {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告5'}
+         </div>
+  </div>
+
+
+</div>
+
+
+
+</div>
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+
+
+
+<div class=" floor-full-banner mid_big">  
+ <!-- TemplateBeginEditable name="分类最下方广告位宽屏" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --> 
+</div>
+<div class=" floor-full-banner mid_small">  
+ <!-- TemplateBeginEditable name="分类最下方广告位窄屏" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable --> 
+</div>
+
+<script type="text/javascript">
+
+// 楼层"F"
+$(".title_txt").each(function(i){
+	$(this).find("span").text((i+1)+"F");
+});
+
+// 广告图片的文字图片滑动展示
+(function($) {
+    $.fn.extend({
+        ad_slide: function(options) {
+            var _this = this;
+            _this.cur = options.current;
+            _this.minwidth = options.minwidth;
+            _this.maxwidth = options.maxwidth;
+            _this.picstyle = options.picstyle;
+
+            //设置
+            _this.set = function(lid, obj) {
+                obj.parent().children('li').removeClass(_this.cur);
+                obj.parent().children('li').children('i').remove();
+
+                obj.parent().children('li').stop(true).animate({
+                    width: _this.minwidth
+                }, 300);
+                obj.stop(true).animate({
+                    width: _this.maxwidth
+                }, 300);
+                obj.append('<i></i>');
+                var left = 190 * (lid);
+                $(_this.picstyle).stop(true).animate({
+                    left: -left + 'px'
+                }, 300);
+            }
+
+            //初始化
+            _this.init = function() {
+                var len = $(_this.picstyle + ' li').length;
+                var liwidth = $(_this.picstyle + ' li').width();
+                $(_this.picstyle).width(liwidth * len);
+
+                _this.mouseover(function() {
+                    _this.set($(this).attr('lid'), $(this));
+                });
+            }
+            _this.init(); //运行
+        }
+    });
+})(jQuery);
+
+(function() {
+	$(".ad_pic").each(function(i){
+		$(this).attr("id","ad_pic"+(i+1));
+	});
+	$(".ad_text").each(function(i){
+		$(this).attr("id","ad_text"+(i+1));
+	});
+	for (var i = $('.ad_text').length; i > 0; i--) {
+		$('#ad_text' + i + ' li').ad_slide({
+			current: "current",
+			minwidth: "120px",
+			maxwidth: "180px",
+			picstyle: "#ad_pic" + i
+		});
+	};
+})();
+</script>
+
+</div>
+
+<div class="blank5"></div>
+ <!-- #BeginLibraryItem "/library/page_footer.lbi" --> <!-- #EndLibraryItem --> 
+   
+
+
+<script type="text/javascript">
+
+{foreach from=$lang.compare_js item=item key=key}
+{if $key neq 'button_compare'}
+var {$key} = "{$item}";
+{else}
+var button_compare = '';
+{/if}
+{/foreach}
+var compare_no_goods = "{$lang.compare_no_goods}";
+var btn_buy = "{$lang.btn_buy}";
+var is_cancel = "{$lang.is_cancel}";
+var select_spe = "{$lang.select_spe}";
+</script>
+</body>
+</html>

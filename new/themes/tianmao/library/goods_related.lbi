@@ -1,0 +1,41 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $related_goods} -->
+<div class="user_loves lshadow">
+
+
+            
+ <div class="bd">
+   <ul class="pro_list picList" style="width:200px">
+     
+      <!--{foreach from=$related_goods item=releated_goods_data}-->
+          <li >
+          <a href="{$releated_goods_data.url}" class="pro_pic"><img src="{$releated_goods_data.goods_thumb}" alt="{$releated_goods_data.goods_name}"  width="120" height="120"/></a>
+ 
+        <p class="pro_price">
+        <a>
+        <!-- {if $releated_goods_data.promote_price neq 0} -->
+        <font >{$releated_goods_data.formated_promote_price}</font>
+        <!-- {else} -->
+       <font>{$releated_goods_data.shop_price}</font>
+        <!-- {/if} -->
+        </a>
+        </p>
+          </li> 
+        <!--{/foreach}-->
+    </ul>
+ </div>
+ 
+ <div class="hd">
+				
+				<a class="prev"></a>
+				<a class="next"></a>
+			
+</div>
+ 	<script type="text/javascript">
+		 jQuery(".user_loves").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"top",autoPlay:true,vis:3,trigger:"click"});
+	</script>
+
+ </div>
+
+<!-- {/if} -->
+

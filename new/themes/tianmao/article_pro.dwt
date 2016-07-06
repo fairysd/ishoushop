@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+{* 包含脚本文件 *}
+{insert_scripts files='common.js'}
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<!--当前位置 start-->
+<div class="block box">
+ <div id="ur_here">
+  <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+ </div>
+</div>
+<!--当前位置 end-->
+<div class="blank"></div>
+<div class="block">
+  <div class="box">
+   <div class="box_1" >
+    <h3><span >爱收宝注册页面的用户协议</span></h3><br/>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;爱收宝网站平台声明：爱收宝国际互联网网站销售平台是苏州爱收宝科技有限公司面向社会、服务大众的网络窗口，为广大客户提供各类信息服务以及多项网络实用功能，凡浏览本网站及相关网页的用户，均表示接受以下条款。爱收宝保留对本声明包含的条款、条件和说明变更的权利。变更自公布时生效，您继续使用本网站，则视为您接受这些更改。您应当经常浏览本网站声明，以了解本网站信息的变化。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 网站进入：您通过其他网站的链接进入本网站可能存在登录假冒淘当铺商城网站的风险，建议您采用安全的方式（如在浏览器地址栏直接键入网址 http://www.aishoubao.com或点击收藏夹内记录的正确网址）访问本网站。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信息声明：本网站上关于爱收宝商城入驻商家或他们的产品（包括但不限于公司名称、联系人及联络信息，产品的描述和说明，相关图片、视讯等）的信息均由商家自行提供，商家依法应对其提供的任何信息承担全部责任。爱收宝商城对此等信息的准确性、完整性、合法性或真实性均不承担任何责任。此外，爱收宝商城对任何使用或提供本网站信息的商业活动及其风险不承担任何责任。未经爱收宝的书面许可，任何人严禁使用本网站展示的产品图片。任何未经授权便使用本网站图片都可能违反国际法，商标法，隐私权法，通讯、通信等法律法规。浏览者可以下载本网站上显示的资料，但这些资料只限用于个人学习研究使用，不得用于任何商业用途，无论是否在资料上明示，所有此等资料都是受到版权法的法律保护。浏览者没有获得爱收宝商城或各自的版权所有者明确的书面同意下，不得分发、修改、散布、再使用、再传递或使用本网站的内容用于任何公众商业用途。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;意见声明：未以本网站名义表述的任何意见均属于个人观点，并不代表爱收宝商城的意见。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;合法权益：1、任何使用爱收宝商城的用户均应仔细阅读本声明，用户使用爱收宝商城的行为将被视为对本声明全部内容的认可。 2、爱收宝商城尊重并保护所有使用本站用户的个人隐私权，用户注册的用户名、电子邮件地址等个人资料，非经用户亲自许可或根据相关法律的强制性规定，本站不会泄露给第三方。 3、任何单位或个人认为通过爱收宝商城的内容可能涉嫌侵犯其合法权益，应该及时向爱收宝商城网站书面反馈，并提供身份证明、权属证明及详细侵权情况证明，我们在收到上述法律文件后，将会尽快安排处理。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;版权与商标声明：爱收宝商城网站版权归属爱收宝商城，所有权利在中国大陆范围内受法律保护。“爱收宝”是我公司的注册商标，其他机构未经我公司书面同意不得引用和展示该商标。 1、本站用户出于传递更多信息之目的公开的任意信息，并不意味我公司赞同其观点或证实其内容的真实性。 2、本站转载部分均注明出处，如若转载作品侵犯作者署名权，并非出于本网故意，在接到相关权利人通知后，本站会加以更正。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;网站链接：当本网站以链接形式推荐其他网站内容时，本网站并不对这些网站或资源的可用性负责，且不保证从这些网站获取的任何内容、产品、服务或其他材料的真实性、合法性，对于任何因使用或信赖从此类网站或资源上获取的内容、产品、服务或其他材料而造成（或声称造成）的任何直接或间接损失，本网站均不承担任何责任。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;个人资料保密：1、您通过本网站提供的任何个人资料，将仅由爱收宝商城使用，以改善爱收宝商城提供给您的服务。爱收宝商城尽力保证按您提供的个人资料的原始真实性收集、传送和存储个人资料。爱收宝商城将不使用您的个人资料给您提供不重要的消息或信息，同时，未经您的许可，爱收宝商城将不与第三方共享资料或将资料销售给第三方，但根据法律或政府的强制性规定予以提供的，爱收宝商城均得免责。 2、您不得向或从本网站邮寄或发送任何带有病毒的、涉及侮辱、诽谤、造谣的或其他中国相关法律规定的非法或侵权的材料和信息。爱收宝有权对您输入到本网站上的信息进行监视和/或检查，淘当铺保留完全依其决定不必事先通知且不必说明理由而检查您输入的信息和删除您输入的信息的权利。 3、任何由于计算机问题、黑客攻击、计算机病毒侵入或发作、因政府管制而造成的暂时性关闭等影响网络正常经营的不可抗力而造成的个人资料泄露、丢失、被盗 用或被窜改等，爱收宝均得免责。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;购物成功判断标准：爱收宝大部分商品都是唯一一件，这些商品在爱收宝网站及各典当行都是同时销售，如果发生了重复订单，我们以确认付款先后为唯一判断标准，与在线放入购物车的时间长短无关，请周知。如果您选中的商品在您付款前被其他顾客抢先付款了，请您联络我们的销售人员，我们尽量帮您找同价同款的商品。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;服务中断与提醒声明：1、不担保或保证网络服务一定能满足用户的要求，也不担保网络服务不会中断，对网络服务的及时性、安全性、准确性也都不作任何担保或保证。用户须独立承担前述风险。爱收宝对于用户使用爱收宝商城服务或无法使用网络服务所导致的计算机软、硬件的损害或发生资料的流失等任何直接、间接、附带、特别、衍生的损害不承担任何责任。 2、由于爱收宝货品单一特性，爱收宝会员下订单完成之后，需要等待爱收宝客服确认接受该订单之后，该订单才算做成立。爱收宝履行上述提醒后，不再承担订单成立提醒之外的任何提示义务。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不可抗力：对于因不可抗力或爱收宝能控制的原因造成的网络服务中断或其它缺陷，爱收宝不承担任何责任，但将尽力减少因此而给用户造成的损失和影响。不声称或保证准确性 尽管爱收宝尽力确保本网站所有信息的正确性和适时性，但并不能保证其为完全准确，爱收宝对本网站信息的准确性、完整性和真实性不作任何承诺；对信息的迟延、失误和遗漏不承担任何责任。
+责任限定：爱收宝明确声明：不承担您因接入或使用本网站而产生的直接、间接、附带的、后继的或特殊的损失，包括因病毒影响您的计算机设备或依赖从本网站获得的信息等而造成的损失。
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;声明内容的更新：爱收宝保留根据业务需要随时对本声明内容进行更新的权利，请您在每次登录本网站时访问此网页，查看本网站的当前声明内容。
+第三方通知：如第三方通知爱收宝网站存在侵权信息、材料，爱收宝将在核实有关情况后，及时对该等信息、材料采取删除、屏蔽、断开链接等必要措施。爱收宝尽到上述义务后，不再承担任何责任。
+</p>
+    <div class="boxCenterList">
+      <!-- {if $article.content } -->
+     {$article.content}
+     <!-- {/if} -->
+    </div>
+   </div>
+  </div>
+  <div class="blank5"></div>
+</div>
+<div class="blank5"></div>
+<!--帮助-->
+<div class="block">
+  <div class="box">
+   <div class="helpTitBg clearfix">
+    <!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem -->
+   </div>
+  </div>
+</div>
+<div class="blank"></div>
+<!--帮助-->
+<!--友情链接 start-->
+<!--{if $img_links  or $txt_links }-->
+<div id="bottomNav" class="box">
+ <div class="box_1">
+  <div class="links clearfix">
+    <!--开始图片类型的友情链接{foreach from=$img_links item=link}-->
+    <a href="{$link.url}" target="_blank" title="{$link.name}"><img src="{$link.logo}" alt="{$link.name}" border="0" /></a>
+    <!--结束图片类型的友情链接{/foreach}-->
+    <!-- {if $txt_links} -->
+    <!--开始文字类型的友情链接{foreach from=$txt_links item=link}-->
+    [<a href="{$link.url}" target="_blank" title="{$link.name}">{$link.name}</a>]
+    <!--结束文字类型的友情链接{/foreach}-->
+    <!-- {/if} -->
+  </div>
+ </div>
+</div>
+<!--{/if}-->
+<!--友情链接 end-->
+<div class="blank"></div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

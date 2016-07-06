@@ -1,0 +1,131 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+</script>
+<script type="text/javascript">
+//收藏本站 bbs.ecmoban.com
+function AddFavorite(title, url) {
+  try {
+      window.external.addFavorite(url, title);
+  }
+catch (e) {
+     try {
+       window.sidebar.addPanel(title, url, "");
+    }
+     catch (e) {
+         alert("抱歉，您所使用的浏览器无法完成此操作。\n\n加入收藏失败，请使用Ctrl+D进行添加");
+     }
+  }
+}
+</script>
+
+<div id="site-nav">
+  <div id="sn-bd">
+    <div class="sn-container" style="width:990px;">
+       <div style="width:430px; float:left">
+      <p id="login-info" class="sn-login-info">
+
+      {insert_scripts files='jquery-1.9.1.min.js,jquery.json.js,jquery.SuperSlide.js'}
+        {insert_scripts files='transport_jquery.js,utils.js,ecmoban_common.js'}
+        <p class="sn-back-home"><span class="mui-iconfont"></span><a href="index.php">返回商城首页</a></p>
+        <font id="ECS_MEMBERZONE" style="float:left;height: 26px;
+line-height: 26px;">{* ECSHOP 提醒您：根据用户id来调用member_info.lbi显示不同的界面  *}{insert name='member_info'} </font> </p></div>
+      <ul class="sn-quick-menu">
+        <li class="sn-cart mini-cart menu"><i class="mui-iconfont"></i> <a class="sn-cart-link" href="flow.php" id="mc-menu-hd" >{insert name='cart_info'}</a> </li>
+        <li class="sn-separator"></li>
+        <li class="sn-mobile"  ><a   class="sn-mobile-link" href="http://shop.aishoubao.com/user.php?act=order_list" >我的订单</a>
+          <div class="sn-qrcode">
+            <div class="sn-qrcode-content"></div>
+            <b></b></div>
+        </li>
+        <li class="sn-separator"></li>
+        <li class="sn-sitemap menu-item" style="position:relative" >
+          <div class="sn-menu J_DirectPromo" > <a class="menu-hd" href="http://kefu.qycn.com/vclient/chat/?websiteid=113372&visitorid=697966020&newver=1&opctwdTime=1459920871&m=pc&originPageTitle=%E7%88%B1%E6%94%B6%E5%AE%9D&originPageUrl=http%3A%2F%2Fwww.aishoubao.com%2F&originPageReferrer=http%3A%2F%2Fwww.aishoubao.com%2F&sessionid=visitor-1457320241&winmode=0" >在线客服</a>
+            <div class="menu-bd" id="menu-bd5">
+              <a class="sitemap-more" href="#">更多内容<b class="sitemap-more-link"></b></a> </div>
+          </div>
+        </li>
+      </ul>
+      <div class="sn-mcate-bd j_MallCateHoverTrigger " style="top: 27px; left:-100px">
+        <div class="sn-mcate-ctn-con" id="J_MallCateCtnCon" data-spm="a2226n2">
+          <ul class="sn-mcate-ctn" id="J_MallCateCtn">
+
+            <!--{foreach from=$categories_pro item=cat name=categories_pro name=foo}-->
+            <li class="cat_{$smarty.foreach.foo.iteration}">
+              <h4 class="sn-mcate-item-hd"><span>{$cat.name|escape:html}</span></h4>
+              <p class="sn-mcate-item-bd">
+                <!--{foreach from=$cat.cat_id item=child}-->
+                <!--{foreach from=$child.cat_id item=childer}-->
+                <a href="{$childer.url}" target="_blank">{$childer.name|escape:html}</a>
+                <!--{/foreach}-->
+                <!--{/foreach}-->
+              </p>
+            </li>
+            <!-- {/foreach} -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="header" >
+  <div></div>
+  <div class="headerLayout" style="width:990px">
+    <div class="headerCon " style="width:990px">
+      <h1 id="mallLogo" class="mall-logo" style="margin-right:90px;"> <a class="fp-logo" href="http://www.aishoubao.com"><img src="../images/logo.gif" style="margin-top:20px;"/></a> </h1>
+      <div class="header-extra">
+
+        <div id="mallSearch" class="mall-search">
+
+          <form class="mallSearch-form" id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()" >
+
+
+              <div class="mallSearch-input clearfix">
+                   <div class="s-combobox-input-wrap">
+                    <input type="text" name="keywords" id="mq" tabindex="9"  class="s-combobox-input"  value="商品" onclick="javascript:if(this.value=='商品')this.value=''">
+                  </div>
+
+                <input name="imageField" type="submit" value="搜索" class="sub_ss" />
+
+                <input type="hidden" name="user_action" value="initiative">
+                <input type="hidden" name="at_topsearch" value="1">
+                <input type="hidden" name="sort" value="st">
+                <input id="J_Type" type="hidden" name="type" value="p">
+                <input id="J_Cat" type="hidden" name="cat" value="all">
+                <input type="hidden" name="vmarket" value="">
+              </div>
+
+          </form>
+          <ul class="hot-query">
+            <script type="text/javascript">
+                        {literal}
+                        <!--
+                        function checkSearchForm()
+                        {
+                            if(document.getElementById('keyword').value)
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                alert("{$lang.no_keywords}");
+                                return false;
+                            }
+                        }
+                        -->
+                        {/literal}
+                        </script>
+            {if $searchkeywords}
+            {foreach from=$searchkeywords item=val}
+            <li class="hot-query-highlight"><a href="search.php?keywords={$val|escape:url}">{$val}</a></li>
+            {/foreach}
+            {/if}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

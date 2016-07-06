@@ -1,0 +1,67 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="fp-floor fp-floor-nvz">
+  
+  <div class="floor-content grid-container-1190">
+    <div class="grid-col-190 floor-show">
+      <ul class="floor-show-top floor-title"> 
+        <li> <a href="{$goods_cat.url}"> <span class="floor-icon fp-iconfont"></span>  
+        <span class="floor-key">
+        {$goods_cat.name|escape:html}</span> </a> </li> 
+       </ul>
+      
+         <div class="picScroll-left-g">
+			<div class="hd">
+				<a class="next fp-iconfont">㑤</a>
+				<a class="prev fp-iconfont">㑥</a>
+			</div>
+			<div class="bd">
+				<ul class="picList">
+        <!--{foreach from=$goods_cat.brands item=brands name=foo}-->
+                   <!-- {if $smarty.foreach.foo.iteration>0 && $smarty.foreach.foo.iteration<7}-->
+                  <li>
+                   <div class="pic"><a href="{$brands.url}" target="_blank" title="{$brands.brand_name}"> {if $brands.logo neq 'data/brandlogo/'}<img width="90" height="135" border="0" alt="{$brands.brand_name}" src="{$brands.logo}">{else}{$brands.brand_name}{/if}</a></div>
+                 </li>
+          <!--{/if}-->
+        <!--{/foreach}-->
+                  
+                
+				</ul>
+			</div>
+		</div>
+     <script type="text/javascript">
+			jQuery(".picScroll-left-g").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,scroll:1,vis:1});
+	 </script>
+
+    <div class="floor-show-bottom">
+       <ul class="floor-label-list">
+          <!--{foreach from=$goods_cat.cat_clild item=cat name=foo}-->
+          <li> <a href="{$cat.url}" target="_blank" title="{$cat.name}">{$cat.name}</a></li>
+          <!--{/foreach}-->
+          
+        </ul>
+    </div>
+
+    </div>
+    
+
+    <div class="floor-banner-container">
+    
+    <div class="grid-col-400 floor-banner"> {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告1'} </div>
+    
+      <div class="grid-col-199 floor-banner floor-banner2">
+      	{insert name='get_ad' cat_name=$goods_cat.name type='右侧广告2'}
+        {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告3'}
+      </div>
+        
+      <div class="grid-col-199 floor-banner floor-banner2"> {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告4'}
+        {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告5'} </div>
+        
+        <div class="grid-col-199 floor-banner floor-banner2"> <p class="floor_imgs">{insert name='get_ad' cat_name=$goods_cat.name type='右侧广告6'}</p>
+        {insert name='get_ad' cat_name=$goods_cat.name type='右侧广告7'} </div>
+    </div>
+    </div>
+   
+  
+  
+  </div>
+

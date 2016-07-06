@@ -1,0 +1,208 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="J_daily_cont">
+       <div  class="fushi-new">
+         <h1>时尚新品</h1>
+         
+         <ul class="brand-main clearfix">
+         
+           <li class="brand-main-item">
+                                       
+                                            <?php
+if($_REQUEST['id'])
+{
+$id = $_REQUEST['id'];
+}else{
+$id = $_REQUEST['category'];
+}
+$sql = "select ap.ad_width,ap.ad_height,ad.ad_name,ad.ad_code,ad.ad_link from ".$GLOBALS['ecs']->table('ad_position').
+" as ap left join ".$GLOBALS['ecs']->table('ad')." as ad on ad.position_id = ap.position_id where ad.ad_name='".'sad_1'.
+"_".$id."' and ad.media_type=0 and UNIX_TIMESTAMP()>ad.start_time and UNIX_TIMESTAMP()<ad.end_time and ad.enabled=1";
+$res = $GLOBALS['db']->getAll($sql);
+foreach($res AS $v)
+{                      
+echo  "<a href='".$v['ad_link']."' target='_blank'><img src='data/afficheimg/".$v['ad_code']."' width='".$v['ad_width']."'
+ height='".$v['ad_height']."' /></a>";
+}
+?>
+                                            <div class="brand-icon-cont"></div>
+                                            <div class="brand-item-info ">
+                                                <span class="brand-name">ZEGNA</span>
+                                                <em class="mui-text-overflow">都市味道</em>
+                                            </div>
+                                            <div class="brand-panel" >
+                                                <?php
+if($_REQUEST['id'])
+{
+$id = $_REQUEST['id'];
+}else{
+$id = $_REQUEST['category'];
+}
+$sql = "select ap.ad_width,ap.ad_height,ad.ad_name,ad.ad_code,ad.ad_link from ".$GLOBALS['ecs']->table('ad_position').
+" as ap left join ".$GLOBALS['ecs']->table('ad')." as ad on ad.position_id = ap.position_id where ad.ad_name='".'sad_a1'.
+"_".$id."' and ad.media_type=0 and UNIX_TIMESTAMP()>ad.start_time and UNIX_TIMESTAMP()<ad.end_time and ad.enabled=1";
+$res = $GLOBALS['db']->getAll($sql);
+foreach($res AS $v)
+{                      
+echo  "<a href='".$v['ad_link']."' target='_blank'><img src='data/afficheimg/".$v['ad_code']."' width='".$v['ad_width']."'
+ height='".$v['ad_height']."' /></a>";
+}
+?>
+                                            </div>
+                                      
+                                    </li>
+                                    
+                                    
+                                     <!-- <li class="brand-main-item">
+                                        <a href="#">
+                                            <img src="images/djnew_1.jpg" width="237" height="428">
+                                            <div class="brand-icon-cont"></div>
+                                            <div class="brand-item-info ">
+                                                <span class="brand-name">ZEGNA</span>
+                                                <em class="mui-text-overflow">都市味道</em>
+                                            </div>
+                                            <div class="brand-panel">
+                                                <img src="images/dj_logo1.jpg" width="55" height="30">
+                                            </div>
+                                        </a>
+                                    </li>-->
+                                       
+                                        <li class="brand-main-item">
+                                       
+                                             <?php
+if($_REQUEST['id'])
+{
+$id = $_REQUEST['id'];
+}else{
+$id = $_REQUEST['category'];
+}
+$sql = "select ap.ad_width,ap.ad_height,ad.ad_name,ad.ad_code,ad.ad_link from ".$GLOBALS['ecs']->table('ad_position').
+" as ap left join ".$GLOBALS['ecs']->table('ad')." as ad on ad.position_id = ap.position_id where ad.ad_name='".'sad_2'.
+"_".$id."' and ad.media_type=0 and UNIX_TIMESTAMP()>ad.start_time and UNIX_TIMESTAMP()<ad.end_time and ad.enabled=1";
+$res = $GLOBALS['db']->getAll($sql);
+foreach($res AS $v)
+{                      
+echo  "<a href='".$v['ad_link']."' target='_blank'><img src='data/afficheimg/".$v['ad_code']."' width='".$v['ad_width']."'
+ height='".$v['ad_height']."' /></a>";
+}
+?>
+                                            <div class="brand-icon-cont"></div>
+                                            <div class="brand-item-info ">
+                                                <span class="brand-name">HUGO BOSS</span>
+                                                <em class="mui-text-overflow">时尚高品质</em>
+                                            </div>
+                                            <div class="brand-panel">
+                                                <?php
+if($_REQUEST['id'])
+{
+$id = $_REQUEST['id'];
+}else{
+$id = $_REQUEST['category'];
+}
+$sql = "select ap.ad_width,ap.ad_height,ad.ad_name,ad.ad_code,ad.ad_link from ".$GLOBALS['ecs']->table('ad_position').
+" as ap left join ".$GLOBALS['ecs']->table('ad')." as ad on ad.position_id = ap.position_id where ad.ad_name='".'sad_a2'.
+"_".$id."' and ad.media_type=0 and UNIX_TIMESTAMP()>ad.start_time and UNIX_TIMESTAMP()<ad.end_time and ad.enabled=1";
+$res = $GLOBALS['db']->getAll($sql);
+foreach($res AS $v)
+{                      
+echo  "<a href='".$v['ad_link']."' target='_blank'><img src='data/afficheimg/".$v['ad_code']."' width='".$v['ad_width']."'
+ height='".$v['ad_height']."' /></a>";
+}
+?>
+                                            </div>
+                                       
+                                    </li>
+                             
+                                  <li class="brand-main-item">
+                                         <?php
+if($_REQUEST['id'])
+{
+$id = $_REQUEST['id'];
+}else{
+$id = $_REQUEST['category'];
+}
+$sql = "select ap.ad_width,ap.ad_height,ad.ad_name,ad.ad_code,ad.ad_link from ".$GLOBALS['ecs']->table('ad_position').
+" as ap left join ".$GLOBALS['ecs']->table('ad')." as ad on ad.position_id = ap.position_id where ad.ad_name='".'sad_3'.
+"_".$id."' and ad.media_type=0 and UNIX_TIMESTAMP()>ad.start_time and UNIX_TIMESTAMP()<ad.end_time and ad.enabled=1";
+$res = $GLOBALS['db']->getAll($sql);
+foreach($res AS $v)
+{                      
+echo  "<a href='".$v['ad_link']."' target='_blank'><img src='data/afficheimg/".$v['ad_code']."' width='".$v['ad_width']."'
+ height='".$v['ad_height']."' /></a>";
+}
+?>
+                                            <div class="brand-icon-cont"></div>
+                                            <div class="brand-item-info ">
+                                                <span class="brand-name">Armani</span>
+                                                <em class="mui-text-overflow">时尚而奢华</em>
+                                            </div>
+                                            <div class="brand-panel">
+                                                 <?php
+if($_REQUEST['id'])
+{
+$id = $_REQUEST['id'];
+}else{
+$id = $_REQUEST['category'];
+}
+$sql = "select ap.ad_width,ap.ad_height,ad.ad_name,ad.ad_code,ad.ad_link from ".$GLOBALS['ecs']->table('ad_position').
+" as ap left join ".$GLOBALS['ecs']->table('ad')." as ad on ad.position_id = ap.position_id where ad.ad_name='".'sad_a3'.
+"_".$id."' and ad.media_type=0 and UNIX_TIMESTAMP()>ad.start_time and UNIX_TIMESTAMP()<ad.end_time and ad.enabled=1";
+$res = $GLOBALS['db']->getAll($sql);
+foreach($res AS $v)
+{                      
+echo  "<a href='".$v['ad_link']."' target='_blank'><img src='data/afficheimg/".$v['ad_code']."' width='".$v['ad_width']."'
+ height='".$v['ad_height']."' /></a>";
+}
+?>
+                                            </div>
+                                       
+                                    </li>
+                                     
+                                      <li class="brand-main-item">
+                                        <?php
+if($_REQUEST['id'])
+{
+$id = $_REQUEST['id'];
+}else{
+$id = $_REQUEST['category'];
+}
+$sql = "select ap.ad_width,ap.ad_height,ad.ad_name,ad.ad_code,ad.ad_link from ".$GLOBALS['ecs']->table('ad_position').
+" as ap left join ".$GLOBALS['ecs']->table('ad')." as ad on ad.position_id = ap.position_id where ad.ad_name='".'sad_4'.
+"_".$id."' and ad.media_type=0 and UNIX_TIMESTAMP()>ad.start_time and UNIX_TIMESTAMP()<ad.end_time and ad.enabled=1";
+$res = $GLOBALS['db']->getAll($sql);
+foreach($res AS $v)
+{                      
+echo  "<a href='".$v['ad_link']."' target='_blank'><img src='data/afficheimg/".$v['ad_code']."' width='".$v['ad_width']."'
+ height='".$v['ad_height']."' /></a>";
+}
+?>
+                                            <div class="brand-icon-cont"></div>
+                                            <div class="brand-item-info brand-item-border-r">
+                                                <span class="brand-name">DSQUARED2</span>
+                                                <em class="mui-text-overflow">个性与时尚</em>
+                                            </div>
+                                            <div class="brand-panel">
+                                                <?php
+if($_REQUEST['id'])
+{
+$id = $_REQUEST['id'];
+}else{
+$id = $_REQUEST['category'];
+}
+$sql = "select ap.ad_width,ap.ad_height,ad.ad_name,ad.ad_code,ad.ad_link from ".$GLOBALS['ecs']->table('ad_position').
+" as ap left join ".$GLOBALS['ecs']->table('ad')." as ad on ad.position_id = ap.position_id where ad.ad_name='".'sad_a4'.
+"_".$id."' and ad.media_type=0 and UNIX_TIMESTAMP()>ad.start_time and UNIX_TIMESTAMP()<ad.end_time and ad.enabled=1";
+$res = $GLOBALS['db']->getAll($sql);
+foreach($res AS $v)
+{                      
+echo  "<a href='".$v['ad_link']."' target='_blank'><img src='data/afficheimg/".$v['ad_code']."' width='".$v['ad_width']."'
+ height='".$v['ad_height']."' /></a>";
+}
+?>
+                                            </div>
+                                       
+                                    </li>
+                              </ul>
+         
+         
+       </div>
+    </div>

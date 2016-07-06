@@ -1,0 +1,454 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+{* 包含脚本文件 *}
+{insert_scripts files='common.js,user.js,jquery-1.9.1.min.js,layer/layer.js'}
+</head>
+<body>
+<div class="body_user ">
+<!-- #BeginLibraryItem "/library/page_header3.lbi" --><!-- #EndLibraryItem -->
+</div>
+<!--当前位置 start-->
+<div id="container">
+<div class="contentBody">
+<div class="block_s">
+ <div id="ur_here">
+  <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+ </div>
+<!--当前位置 end-->
+
+
+<div id="content_users">
+  <!--left start-->
+  <div class="accountSide">
+
+        <!-- #BeginLibraryItem "/library/user_menu.lbi" --><!-- #EndLibraryItem -->
+
+  </div>
+  <!--left end-->
+  <!--right start-->
+  <div class="content_body2 " style="color:#666;">
+    <div class="box">
+     <div class="box_1">
+      <div class="userCenterBox boxCenterList clearfix" style="_height:1%;">
+      <!--#回收订单列表界面 start-->
+       <!-- {if $action eq 'estimate_list'} -->
+       <h5><span>我的回收</span></h5>
+       <div class="blank"></div>
+       <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+          <tr align="center">
+            <td bgcolor="#ffffff">{$lang.order_number}</td>
+            <td bgcolor="#ffffff">商品名称</td>
+            <td bgcolor="#ffffff">{$lang.order_addtime}</td>
+            <td bgcolor="#ffffff">产品估价</td>
+            <td bgcolor="#ffffff">实际回收价格</td>
+            <td bgcolor="#ffffff">{$lang.order_status}</td>
+            <td bgcolor="#ffffff">{$lang.handle}</td>
+          </tr>
+          <!--{foreach from=$estimateOrds item=item}-->
+          <tr>
+            <td align="center" bgcolor="#ffffff"><a href="user.php?act=estimate_list_detail&id={$item[id]}" class="f6">{$item[tradeNo]}</a></td>
+            <td align="left" bgcolor="#ffffff">{$item[productName]}</td>
+            <td align="center" bgcolor="#ffffff">{$item[createTime]}</td>
+            <td align="right" bgcolor="#ffffff">￥{$item[estimatePrice]}</td>
+            <td align="right" bgcolor="#ffffff"><!-- {if $item[purchasePrice] neq ''}-->￥{$item[purchasePrice]}<!--{/if}--></td>
+            <td align="left" bgcolor="#ffffff">{$item[status]}<!-- {if $item[expressNo] neq ''}--><br>单号:<a href="http://www.sf-express.com/cn/sc/dynamic_functions/waybill/#search/bill-number/{$item[expressNo]}" target="_blank">{$item[expressNo]}</a><!--{/if}--></td>
+            <td align="center" bgcolor="#ffffff"><font class="f6"><a href="user.php?act=estimate_list_detail&id={$item[id]}" class="f6">查看</a><!-- {if $item[status] eq '等待验货'} --><!-- {if $item[tradeType] eq '2'}-->&nbsp;&nbsp;<a href="#" onclick="enter_expressno('{$item[id]}')" class="f6">输入快递单号</a><!--{/if}-->&nbsp;&nbsp;<a href="javascript:if(confirm('确定要取消订单吗?'))location.href='user.php?act=estimate_cancel&id={$item[id]}'">取消</a><!--{/if}--></font></td>
+          </tr>
+          <!--{/foreach}-->
+          </table>
+        <div class="blank5"></div>
+       <!--{/if}-->
+      <!--#订单列表界面 end-->
+     <!-- ==========订单详情页面,包括：订单状态，商品列表，费用总计，收货人信息，支付方式，其它信息========== -->
+     <!--{if $action eq estimate_list_detail} -->
+        <h5><span>{$lang.order_status}</span></h5>
+        <div class="blank"></div>
+         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+        <tr>
+          <td width="15%" align="right" bgcolor="#ffffff">{$lang.detail_order_sn}：</td>
+          <td align="left" bgcolor="#ffffff">{$estimateDetail.tradeNo}
+          </td>
+        </tr>
+        <tr>
+          <td align="right" bgcolor="#ffffff">{$lang.detail_order_status}：</td>
+          <td align="left" bgcolor="#ffffff">{$estimateDetail.status}</td>
+        </tr>
+        <tr>
+          <td align="right" bgcolor="#ffffff">交易方式：</td>
+          <td align="left" bgcolor="#ffffff">{if $estimateDetail.tradeType=="2"}快递交易 [单号:{$estimateDetail.expressNo}]{/if}{if $estimateDetail.tradeType=="1"}门店交易{/if}</td>
+        </tr>
+        {if $estimateDetail.tradeType=="2"}
+        <tr>
+          <td align="right" bgcolor="#ffffff">寄件地址：</td>
+          <td align="left" bgcolor="#ffffff">江苏省苏州市姑苏区园林路5-2号</td>
+        </tr>
+        {/if}
+        {if $estimateDetail.tradeType=="1"}
+        <tr>
+          <td align="right" bgcolor="#ffffff">门店信息：</td>
+          <td align="left" bgcolor="#ffffff">地址：{$estimateDetail.orgAddress} 电话：{$estimateDetail.orgTel}</td>
+        </tr>
+        {/if}
+        <tr>
+          <td align="right" bgcolor="#ffffff">支付方式：</td>
+          <td align="left" bgcolor="#ffffff">{if $estimateDetail.payType=="1"}现金交易{/if}{if $estimateDetail.payType=="2"}银行转账{/if}{if $estimateDetail.payType=="3"}支付宝支付{/if}{if $estimateDetail.payType=="4"}微信支付{/if}</td>
+        </tr>
+        {if $estimateDetail.payType=="2"}
+        <tr>
+          <td align="right" bgcolor="#ffffff">银行名称</td>
+          <td align="left" bgcolor="#ffffff">{$estimateDetail.bankName}</td>
+        </tr>
+        <tr>
+          <td align="right" bgcolor="#ffffff">账户名</td>
+          <td align="left" bgcolor="#ffffff">{$estimateDetail.accountName}</td>
+        </tr>
+        <tr>
+          <td align="right" bgcolor="#ffffff">银行卡号</td>
+          <td align="left" bgcolor="#ffffff">{$estimateDetail.bankCardno}</td>
+        </tr>
+        {/if}
+        {if $estimateDetail.payType=="3"}
+        <tr>
+          <td align="right" bgcolor="#ffffff">支付宝帐号</td>
+          <td align="left" bgcolor="#ffffff">{$estimateDetail.accountName}</td>
+        </tr>
+        {/if}
+        {if $estimateDetail.payType=="4"}
+        <tr>
+          <td align="right" bgcolor="#ffffff">帐号</td>
+          <td align="left" bgcolor="#ffffff">{$estimateDetail.accountName}</td>
+        </tr>
+        {/if}
+      </table>
+        <div class="blank"></div>
+        <h5><span>{$lang.goods_list}</span></h5>
+        <div class="blank"></div>
+         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+          <tr>
+            <th width="23%" align="center" bgcolor="#ffffff">{$lang.goods_name}</th>
+            <th width="29%" align="center" bgcolor="#ffffff">{$lang.goods_attr}</th>
+            <th width="26%" align="center" bgcolor="#ffffff">产品估价</th>
+            <th width="26%" align="center" bgcolor="#ffffff">实际回收价格</th>
+          </tr>
+          <tr>
+            <td bgcolor="#ffffff">{$estimateDetail.productName}</td>
+            <td align="left" bgcolor="#ffffff">{$estimateDetail.fullPropertyOptions|nl2br} {$estimateDetail.diamondRemark|nl2br}</td>
+            <td align="right" bgcolor="#ffffff">￥{$estimateDetail.estimatePrice}</td>
+            <td align="right" bgcolor="#ffffff">￥{$estimateDetail.purchasePrice}</td>
+          </tr>
+        </table>
+         <div class="blank"></div>
+
+         
+      <!--{/if} -->
+    <!--#订单详情页 end-->
+    <!--#抵押意向订单列表界面 start-->
+       <!-- {if $action eq 'mortgageintention_list'} -->
+       <h5><span>我的抵押</span></h5>
+       <div class="blank"></div>
+       <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+          <tr align="center">
+            <td bgcolor="#ffffff">{$lang.order_number}</td>
+            <td bgcolor="#ffffff">抵押商品</td>
+            <td bgcolor="#ffffff">{$lang.order_addtime}</td>
+            <td bgcolor="#ffffff">抵押周期</td>
+            <td bgcolor="#ffffff">评估价格</td>
+            <td bgcolor="#ffffff">手续费(每天)</td>
+            <td bgcolor="#ffffff">{$lang.order_status}</td>
+            <td bgcolor="#ffffff">{$lang.handle}</td>
+          </tr>
+          <!--{foreach from=$mortgages item=item}-->
+          <tr>
+            <td align="center" bgcolor="#ffffff"><a href="user.php?act=mortgageintention_list_detail&id={$item[id]}" class="f6">{$item[tradeNo]}</a></td>
+            <td align="left" bgcolor="#ffffff">{$item[productName]}</td>
+            <td align="center" bgcolor="#ffffff">{$item[createTime]}</td>
+            <td align="center" bgcolor="#ffffff">{$item[mortgageStarttime]} - {$item[mortgageEndtime]}</td>
+            <td align="right" bgcolor="#ffffff">￥{$item[estimatePrice]}</td>
+            <td align="right" bgcolor="#ffffff">{$item[mortgageInterestDay]}%</td>
+            <td align="center" bgcolor="#ffffff">{$item[status]}</td>
+            <td align="center" bgcolor="#ffffff"><font class="f6"><a href="user.php?act=mortgageintention_list_detail&id={$item[id]}" class="f6">查看</a><!-- {if $item[status] eq '等待处理'} -->&nbsp;&nbsp;<a href="user.php?act=mortgageintention_cancel&id={$item[id]}">取消</a><!--{/if}--></font></td>
+          </tr>
+          <!--{/foreach}-->
+          </table>
+        <div class="blank5"></div>
+       <!--{/if}-->
+      <!--#抵押意向订单列表界面 end-->
+
+       <!--#抵押意向订单详情界面 start -->
+     <!-- ==========订单详情页面,包括：订单状态，商品列表，费用总计，收货人信息，支付方式，其它信息========== -->
+     <!--{if $action eq mortgageintention_list_detail} -->
+        <h5><span>抵押意向详情</span></h5>
+        <div class="blank"></div>
+         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+        <tr>
+          <td width="15%" align="right" bgcolor="#ffffff">{$lang.detail_order_sn}：</td>
+          <td align="left" bgcolor="#ffffff">{$mortgageDetail.tradeNo}
+          </td>
+        </tr>
+        <tr>
+          <td align="right" bgcolor="#ffffff">{$lang.detail_order_status}：</td>
+          <td align="left" bgcolor="#ffffff">{$mortgageDetail.status}</td>
+        </tr>
+        <tr>
+          <td align="right" bgcolor="#ffffff">抵押周期：</td>
+          <td align="left" bgcolor="#ffffff">{$mortgageDetail.mortgageStarttime} - {$mortgageDetail.mortgageEndtime}</td>
+        </tr>
+        <tr>
+          <td align="right" bgcolor="#ffffff">手续费(每天)：</td>
+          <td align="left" bgcolor="#ffffff">{$mortgageDetail.mortgageInterestDay}%</td>
+        </tr>
+        <tr>
+          <td align="right" bgcolor="#ffffff">交易方式：</td>
+          <td align="left" bgcolor="#ffffff">{if $mortgageDetail.tradeType=="2"}快递交易{/if}{if $mortgageDetail.tradeType=="1"}门店交易{/if}</td>
+        </tr>
+        {if $mortgageDetail.tradeType=="1"}
+        <tr>
+          <td align="right" bgcolor="#ffffff">门店信息：</td>
+          <td align="left" bgcolor="#ffffff">地址：{$mortgageDetail.orgAddress} 电话：{$mortgageDetail.orgTel}</td>
+        </tr>
+        {/if}
+        <tr>
+          <td align="right" bgcolor="#ffffff">支付方式：</td>
+          <td align="left" bgcolor="#ffffff">{if $mortgageDetail.payType=="1"}现金交易{/if}{if $mortgageDetail.payType=="2"}银行转账{/if}{if $mortgageDetail.payType=="3"}支付宝支付{/if}{if $mortgageDetail.payType=="4"}微信支付{/if}</td>
+        </tr>
+        {if $mortgageDetail.payType=="2"}
+        <tr>
+          <td align="right" bgcolor="#ffffff">银行名称</td>
+          <td align="left" bgcolor="#ffffff">{$mortgageDetail.bankName}</td>
+        </tr>
+        <tr>
+          <td align="right" bgcolor="#ffffff">账户名</td>
+          <td align="left" bgcolor="#ffffff">{$mortgageDetail.accountName}</td>
+        </tr>
+        <tr>
+          <td align="right" bgcolor="#ffffff">银行卡号</td>
+          <td align="left" bgcolor="#ffffff">{$mortgageDetail.bankCardno}</td>
+        </tr>
+        {/if}
+        {if $mortgageDetail.payType=="3"}
+        <tr>
+          <td align="right" bgcolor="#ffffff">支付宝帐号</td>
+          <td align="left" bgcolor="#ffffff">{$mortgageDetail.accountName}</td>
+        </tr>
+        {/if}
+        {if $mortgageDetail.payType=="4"}
+        <tr>
+          <td align="right" bgcolor="#ffffff">帐号</td>
+          <td align="left" bgcolor="#ffffff">{$mortgageDetail.accountName}</td>
+        </tr>
+        {/if}
+      </table>
+        <div class="blank"></div>
+        <h5><span>抵押列表</span></h5>
+        <div class="blank"></div>
+         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+          <tr>
+            <th width="23%" align="center" bgcolor="#ffffff">{$lang.goods_name}</th>
+            <th width="29%" align="center" bgcolor="#ffffff">{$lang.goods_attr}</th>
+            <th width="26%" align="center" bgcolor="#ffffff">抵押评估价格</th>
+          </tr>
+          <tr>
+            <td bgcolor="#ffffff">{$mortgageDetail.productName}</td>
+            <td align="left" bgcolor="#ffffff">{$mortgageDetail.fullPropertyOptions|nl2br} {$estimateDetail.diamondRemark|nl2br}</td>
+            <td align="right" bgcolor="#ffffff">￥{$mortgageDetail.estimatePrice}</td>
+          </tr>
+        </table>
+         <div class="blank"></div>
+      <!--{/if} -->
+    <!--#抵押意向订单详情页 end-->
+
+    <!--#抵押订单列表界面 start-->
+       <!-- {if $action eq 'mortgage_list'} -->
+       <h5><span>我的抵押（已成交）</span></h5>
+       <div class="blank"></div>
+       <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+          <tr align="center">
+            <td bgcolor="#ffffff">{$lang.order_number}</td>
+            <td bgcolor="#ffffff">抵押商品</td>
+            <td bgcolor="#ffffff">{$lang.order_addtime}</td>
+            <td bgcolor="#ffffff">抵押周期</td>
+            <td bgcolor="#ffffff">抵押价格</td>
+            <td bgcolor="#ffffff">手续费(每天)</td>
+            <td bgcolor="#ffffff">{$lang.order_status}</td>
+            <td bgcolor="#ffffff">{$lang.handle}</td>
+          </tr>
+          <!--{foreach from=$mortgages item=item}-->
+          <tr>
+            <td align="center" bgcolor="#ffffff"><a href="user.php?act=mortgage_list_detail&id={$item[id]}" class="f6">{$item[tradeNo]}</a></td>
+            <td align="left" bgcolor="#ffffff">{$item[productName]}</td>
+            <td align="center" bgcolor="#ffffff">{$item[createTime]}</td>
+            <td align="center" bgcolor="#ffffff">{$item[mortgageStarttime]} - {$item[mortgageEndtime]}</td>
+            <td align="right" bgcolor="#ffffff">￥{$item[mortgageRealPrice]}</td>
+            <td align="right" bgcolor="#ffffff">{$item[mortgageRealInterestDay]}%</td>
+            <td align="center" bgcolor="#ffffff">{$item[status]}</td>
+            <td align="center" bgcolor="#ffffff"><font class="f6"><a href="user.php?act=mortgage_list_detail&id={$item[id]}" class="f6">查看</a></font></td>
+          </tr>
+          <!--{/foreach}-->
+          </table>
+        <div class="blank5"></div>
+       <!--{/if}-->
+      <!--#抵押订单列表界面 end-->
+
+      <!--#抵押订单详情界面 start -->
+     <!-- ==========订单详情页面,包括：订单状态，商品列表，费用总计，收货人信息，支付方式，其它信息========== -->
+     <!--{if $action eq mortgage_list_detail} -->
+        <h5><span>抵押订单详情</span></h5>
+        <div class="blank"></div>
+         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+        <tr>
+          <td width="15%" align="right" bgcolor="#ffffff">{$lang.detail_order_sn}：</td>
+          <td align="left" bgcolor="#ffffff">{$mortgageDetail.tradeNo}
+          </td>
+        </tr>
+        <tr>
+          <td align="right" bgcolor="#ffffff">{$lang.detail_order_status}：</td>
+          <td align="left" bgcolor="#ffffff">{$mortgageDetail.status}</td>
+        </tr>
+        <tr>
+          <td align="right" bgcolor="#ffffff">抵押价格：</td>
+          <td align="left" bgcolor="#ffffff">{$mortgageDetail.mortgageRealPrice}元</td>
+        </tr>
+        <tr>
+          <td align="right" bgcolor="#ffffff">抵押周期：</td>
+          <td align="left" bgcolor="#ffffff">{$mortgageDetail.mortgageStarttime} - {$mortgageDetail.mortgageEndtime}</td>
+        </tr>
+        <tr>
+          <td align="right" bgcolor="#ffffff">交易方式：</td>
+          <td align="left" bgcolor="#ffffff">{if $mortgageDetail.tradeType=="2"}快递交易{/if}{if $mortgageDetail.tradeType=="1"}门店交易{/if}</td>
+        </tr>
+        {if $mortgageDetail.tradeType=="1"}
+        <tr>
+          <td align="right" bgcolor="#ffffff">门店信息：</td>
+          <td align="left" bgcolor="#ffffff">地址：{$mortgageDetail.orgAddress} 电话：{$mortgageDetail.orgTel}</td>
+        </tr>
+        {/if}
+        <tr>
+          <td align="right" bgcolor="#ffffff">支付方式：</td>
+          <td align="left" bgcolor="#ffffff">{if $mortgageDetail.payType=="1"}现金交易{/if}{if $mortgageDetail.payType=="2"}银行转账{/if}{if $mortgageDetail.payType=="3"}支付宝支付{/if}{if $mortgageDetail.payType=="4"}微信支付{/if}</td>
+        </tr>
+        {if $mortgageDetail.payType=="2"}
+        <tr>
+          <td align="right" bgcolor="#ffffff">银行名称</td>
+          <td align="left" bgcolor="#ffffff">{$mortgageDetail.bankName}</td>
+        </tr>
+        <tr>
+          <td align="right" bgcolor="#ffffff">账户名</td>
+          <td align="left" bgcolor="#ffffff">{$mortgageDetail.accountName}</td>
+        </tr>
+        <tr>
+          <td align="right" bgcolor="#ffffff">银行卡号</td>
+          <td align="left" bgcolor="#ffffff">{$mortgageDetail.bankCardno}</td>
+        </tr>
+        {/if}
+        {if $mortgageDetail.payType=="3"}
+        <tr>
+          <td align="right" bgcolor="#ffffff">支付宝帐号</td>
+          <td align="left" bgcolor="#ffffff">{$mortgageDetail.accountName}</td>
+        </tr>
+        {/if}
+        {if $mortgageDetail.payType=="4"}
+        <tr>
+          <td align="right" bgcolor="#ffffff">帐号</td>
+          <td align="left" bgcolor="#ffffff">{$mortgageDetail.accountName}</td>
+        </tr>
+        {/if}
+      </table>
+        <div class="blank"></div>
+        <h5><span>抵押列表</span></h5>
+        <div class="blank"></div>
+         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+          <tr>
+            <th width="23%" align="center" bgcolor="#ffffff">{$lang.goods_name}</th>
+            <th width="29%" align="center" bgcolor="#ffffff">{$lang.goods_attr}</th>
+            <th width="26%" align="center" bgcolor="#ffffff">抵押评估价格</th>
+          </tr>
+          <tr>
+            <td bgcolor="#ffffff">{$mortgageDetail.productName}</td>
+            <td align="left" bgcolor="#ffffff">{$mortgageDetail.fullPropertyOptions|nl2br} {$estimateDetail.diamondRemark|nl2br}</td>
+            <td align="right" bgcolor="#ffffff">￥{$mortgageDetail.estimatePrice}</td>
+          </tr>
+        </table>
+         <div class="blank"></div>
+        <h5><span>抵押记录</span></h5>
+        <div class="blank"></div>
+         <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+          <tr>
+            <th align="center" bgcolor="#ffffff">记录时间</th>
+            <th align="center" bgcolor="#ffffff">抵押动作</th>
+            <th align="center" bgcolor="#ffffff">抵押周期</th>
+            <th align="center" bgcolor="#ffffff">手续费(%/天)</th>
+            <th align="center" bgcolor="#ffffff">应付手续费</th>
+            <th align="center" bgcolor="#ffffff">已付手续费</th>
+            <th align="center" bgcolor="#ffffff">备注</th>
+          </tr>
+          <!--{foreach from=$mortgageLogs item=item}-->
+          <tr>
+            <td align="center" bgcolor="#ffffff">{$item.operateTime}</td>
+            <td align="center" bgcolor="#ffffff">{$item.operateCmd}</td>
+            <td align="center" bgcolor="#ffffff">{$item.logMortgageStarttime} - {$item.logMortgageEndtime}</td>
+            <td align="center" bgcolor="#ffffff">{$item.logMortgageRealInterestDay}</td>
+            <td align="center" bgcolor="#ffffff">￥{$item.logMortgageExpectEarnings}</td>
+            <td align="center" bgcolor="#ffffff">￥{$item.logMortgageRealEarnings}</td>
+            <td align="center" bgcolor="#ffffff">{$item.operateComment}</td>
+          </tr>
+          <!--{/foreach}-->
+        </table>
+      <!--{/if} -->
+    <!--#抵押订单详情页 end-->
+      </div>
+     </div>
+    </div>
+  </div>
+  <!--right end-->
+</div>
+
+</div>
+</div>
+</div>
+<div class="blank5"></div>
+
+<!-- #BeginLibraryItem "/library/page_footer2.lbi" --><!-- #EndLibraryItem -->
+
+
+
+
+</body>
+<script type="text/javascript">
+{foreach from=$lang.clips_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+
+function enter_expressno(id) {
+  layer.prompt({
+  formType: 0,
+  value: '',
+  title: '请输入顺丰快递单号'
+}, function(value, index, elem){
+  $.ajax({  
+      type : "POST",  //提交方式  
+      url : "http://shop.aishoubao.com/user.php?act=estimate_update_expressno&id="+id+"&expressno="+value,  
+      success : function(result) {//返回数据根据结果进行相应的处理  
+          // console.log(result);
+          result = $.parseJSON(result);
+          if ( result.success ) {  
+            layer.msg('快递单号设置成功!', {icon:1}); 
+            layer.close(index);
+          } else {  
+            layer.msg('快递单号设置失败!', {icon:2});
+          }  
+      }  
+  });  
+});
+}
+</script>
+</html>

@@ -1,0 +1,86 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="slideTxtBox_nav" >
+<style>
+.mynavimg{margin-right: 5px;margin-left: -37px;width:18px;height:18px;}
+</style>
+<div class="left_nav">
+        <div class="leftNav" id="J_mainCata">
+          <ul class="cat-slide-nav clearfix">
+            <!--{foreach from=$categories_pro item=cat name=foo}-->
+
+            <li class=" j_CatNavItem cat-nav">
+              <div class="leftNav_p0{$smarty.foreach.foo.iteration}" style="position:relative;border-bottom: 1px solid #747474;">
+              <s class="cat-nav-icon fp-iconfont"></s> 
+              <!--{if $smarty.foreach.foo.iteration eq 1}--><img src="../images/dh_01.png" align="absmiddle" class="mynavimg"/><!--{elseif $smarty.foreach.foo.iteration eq 2} --><img src="../images/dh_02.png" align="absmiddle" class="mynavimg"/><!--{elseif $smarty.foreach.foo.iteration eq 3} --><img src="../images/dh_03.png" align="absmiddle" class="mynavimg"/><!--{elseif $smarty.foreach.foo.iteration eq 4} --><img src="../images/dh_04.png" align="absmiddle" class="mynavimg"/><!--{elseif $smarty.foreach.foo.iteration eq 5} --><img src="../images/dh_05.png" align="absmiddle" class="mynavimg"/><!--{elseif $smarty.foreach.foo.iteration eq 6} --><img src="../images/dh_06.png" align="absmiddle" class="mynavimg"/><!--{elseif $smarty.foreach.foo.iteration eq 7} --><img src="../images/dh_07.png" align="absmiddle" class="mynavimg"/><!--{elseif $smarty.foreach.foo.iteration eq 8} -->㑔<!--{elseif $smarty.foreach.foo.iteration eq 9} -->㑞<!--{elseif $smarty.foreach.foo.iteration eq 10} -->㑒<!--{elseif $smarty.foreach.foo.iteration eq 11} -->㑝<!--{elseif $smarty.foreach.foo.iteration eq 12} -->㑮<!--{elseif $smarty.foreach.foo.iteration eq 13} -->㑠<!--{elseif $smarty.foreach.foo.iteration eq 14} -->㑟<!--{elseif $smarty.foreach.foo.iteration eq 15} -->㑡<!--{/if}-->
+
+              <!--{if $smarty.foreach.foo.iteration eq 1}-->
+                <a href="http://shop.aishoubao.com/category.php?id=150" title="{$cat.name|escape:html}">黄金白银</a><b class="cat-nav-arrow"></b>
+              
+              <!--{elseif $smarty.foreach.foo.iteration eq 2} -->
+                <a href="http://shop.aishoubao.com/category.php?id=272" title="{$cat.name|escape:html}">钻石珠宝</a><b class="cat-nav-arrow"></b>
+              <!--{elseif $smarty.foreach.foo.iteration eq 3} -->
+                <a  href="http://shop.aishoubao.com/category.php?id=18" title="{$cat.name|escape:html}">大牌名包</a><b class="cat-nav-arrow"></b>
+
+              <!--{elseif $smarty.foreach.foo.iteration eq 4} -->
+                <a href="http://shop.aishoubao.com/category.php?id=352" title="{$cat.name|escape:html}">高端腕表</a><b class="cat-nav-arrow"></b>
+              <!--{elseif $smarty.foreach.foo.iteration eq 5} -->
+                <a href="http://shop.aishoubao.com/category.php?id=292" title="{$cat.name|escape:html}">手机数码</a><b class="cat-nav-arrow"></b>
+              <!--{elseif $smarty.foreach.foo.iteration eq 6} -->
+                <a  href="http://shop.aishoubao.com/category.php?id=16" title="{$cat.name|escape:html}">玉石文玩</a><b class="cat-nav-arrow"></b>
+              <!--{elseif $smarty.foreach.foo.iteration eq 7} -->
+                <a  href="http://shop.aishoubao.com/category.php?id=148" title="{$cat.name|escape:html}">礼品购物卡</a><b class="cat-nav-arrow"></b>
+              <!--{/if}-->
+
+              <!--{if $smarty.foreach.foo.iteration eq 1}-->
+                <br/><a href="http://shop.aishoubao.com/category.php?id=291" style="margin-left:15px;color:#B6B6B6;">足金</a><a href="http://shop.aishoubao.com/category.php?id=363" style="margin-left:15px;color:#B6B6B6;">白银</a><a href="http://shop.aishoubao.com/category.php?id=368" style="margin-left:15px;color:#B6B6B6;color:#B6B6B6;">铂金</a>
+              <!--{elseif $smarty.foreach.foo.iteration eq 2} -->
+                <br/><a href="category.php?id=346" style="margin-left:15px;color:#B6B6B6;">戒指</a> <a href="category.php?id=367" style="margin-left:15px;color:#B6B6B6;">吊坠</a><a href="http://shop.aishoubao.com/category.php?id=380" style="margin-left:15px;color:#B6B6B6;">耳饰</a>
+              
+              <!--{elseif $smarty.foreach.foo.iteration eq 3} -->
+                <br/><a href="http://shop.aishoubao.com/category.php?id=370" style="margin-left:15px;color:#B6B6B6;">爱马仕</a> <a href="http://shop.aishoubao.com/category.php?id=383" style="margin-left:15px;color:#B6B6B6;">香奈儿</a><a href="http://shop.aishoubao.com/category.php?id=384" style="margin-left:15px;color:#B6B6B6;">路易.威登</a>
+
+              <!--{elseif $smarty.foreach.foo.iteration eq 4} -->
+                <br/><a href="http://shop.aishoubao.com/category.php?id=372" style="margin-left:15px;color:#B6B6B6;">欧米茄</a> <a href="http://shop.aishoubao.com/category.php?id=371" style="margin-left:15px;color:#B6B6B6;">劳力士</a><a href="http://shop.aishoubao.com/category.php?id=385" style="margin-left:15px;color:#B6B6B6;">浪琴</a>
+              <!--{elseif $smarty.foreach.foo.iteration eq 5} -->
+                <br/><a href="category.php?id=347" style="margin-left:15px;color:#B6B6B6;">手机</a><a href="category.php?id=349" style="margin-left:15px;color:#B6B6B6;">电脑</a><a href="category.php?id=348" style="margin-left:15px;color:#B6B6B6;">相机</a>
+              <!--{elseif $smarty.foreach.foo.iteration eq 6} -->
+                <br/><a href="category.php?id=358" style="margin-left:15px;color:#B6B6B6;">和田玉</a> <a href="http://shop.aishoubao.com/category.php?id=359" style="margin-left:15px;color:#B6B6B6;">翡翠</a><a href="http://shop.aishoubao.com/category.php?id=360" style="margin-left:15px;color:#B6B6B6;">蜜蜡</a>
+              <!--{elseif $smarty.foreach.foo.iteration eq 7} -->
+                <br/><a href="http://shop.aishoubao.com/category.php?id=377" style="margin-left:15px;color:#B6B6B6;">大润发</a> <a href="http://shop.aishoubao.com/category.php?id=398" style="margin-left:15px;color:#B6B6B6;">欧尚</a><a href="http://shop.aishoubao.com/category.php?id=399" style="margin-left:15px;color:#B6B6B6;">家乐福</a><!--{/if}-->
+              </div>
+
+			  <div class="leftSubNav" id="J_subCata" style="left:170px; z-index:-1; display:block;">
+          <div class="leftSubNav_list" >
+            <div class="leftSubNav_left">
+            <!--<h3 class="cat-title cat_{$smarty.foreach.foo.iteration}"><a href="{$cat.url}" title="{$cat.name|escape:html}">{$cat.name|escape:html}</a></h3>-->
+
+            <!--{foreach from=$cat.cat_id item=child}-->
+              <div class="leftSubNav_left_txt none">
+                <p class="p1"><a href="{$child.url}" target="_blank" class="left_l">{$child.name|escape:html}</a><a href="{$child.url}" class="left_more">更多></a></p>
+                <dl class="cat-label-list">
+                  <!--{foreach from=$child.cat_id item=childer}-->
+                  <dd><a href="{$childer.url}" target="_blank">{$childer.name|escape:html}</a></dd>
+                  <!--{/foreach}-->
+				  <div class="blank"></div>
+                </dl>
+              </div>
+			 <!-- {/foreach} -->
+
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+            </li>
+            <!-- {/foreach} -->
+          </ul>
+        </div>
+
+
+      </div>
+
+</div>

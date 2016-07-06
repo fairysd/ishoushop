@@ -1,0 +1,31 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+{if $user_info}
+
+<div class="member-info" id="J_MemberInfo">
+  <div class="member-pic"> 
+  	{if $user_info.people_img != ""}
+	<img src="./data/people_img/{$user_info.people_img}" width="60" height="60" alt="">
+	{else}
+	<img src="../images/car_m.jpg" width="60" height="60" alt=""> 
+	{/if}
+  </div>
+  <ul class="member-welcome">
+    <li class="bold" style="margin-top:10px;">Hi！<a class="user-nick" href="user.php" >{$user_info.username}</a></li> 
+  </ul>
+  
+  <p class="member-detail"> 
+      <a href="flow.php" style="margin-left:30px;"><em id="J_MinicartNum" class="my-minicart-num">{$cart_num}</em>购物车</a> 
+      <a href="user.php" class="info-last" style="border-right:none"><em class="my-point-num">{$info.pay_points}</em>积分</a></p>
+</div>
+
+{else}
+<div class="member-info member-unlogin" id="J_MemberInfo">
+  <div class="member-pic"> <img src="../images/car_m.jpg" width="60" height="60" alt=""> </div>
+  <ul class="member-welcome">
+    <li class="bold">Hi！欢迎来天猫</li>
+    <li>您还未登录哟</li>
+  </ul>
+  <p class="member-action"> <a href="user.php" class="member-login-btn" target="_self">登录</a> <a href="user.php?act=register" class="member-register-btn">注册</a> </p>
+</div>
+{/if} 

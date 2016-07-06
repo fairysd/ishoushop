@@ -1,0 +1,17 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="float-bar-wrapper">
+                <div class="select-alls">
+                  <input type="checkbox" class="quanxuan2">全选
+                </div>
+                <div class="operations">
+                  <a class="J_DeleteSelected" href="#">删除</a>
+                  <a class="J_BatchFav" href="#">移入收藏夹</a>
+                </div>
+                <div class="btn-area"><a href="flow.php?step=checkout" class="submit-btns">结算</a></div>
+                <div class="price-sum"> 
+                   
+                  商品总价：<b><span>{$goods_price}</span></b> </div>
+                  
+                  
+              </div>
+              

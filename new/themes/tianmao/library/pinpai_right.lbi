@@ -1,0 +1,106 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+<div class="item-slide new-item" style="height:308px">
+    <h2 class="user-discovery-title">
+       <a href="#">我的品牌</a>
+    </h2>
+    
+    <div class="item-slide new-item">
+     <p class="item-desc" style=" border-top:#000 solid 2px">      推荐给您的品牌及上新   </p>
+      <div id="slideBox_pin1" class="slideBox_pin1">               
+                <div class="bd">
+                    <ul>
+                        <li>{insert name='ads' id=15 num=1}</li>
+                        <li>{insert name='ads' id=16 num=1}</li>
+                        <li>{insert name='ads' id=17 num=1}</li>
+                        <li>{insert name='ads' id=18 num=1}</li>
+                    </ul>
+                </div>
+                <div class="hd">
+                    <ul><li></li><li></li><li></li><li></li></ul>
+                </div>
+                <!-- 下面是前/后按钮代码，如果不需要删除即可 -->
+                <a class="prev" href="javascript:void(0)"></a>
+                <a class="next" href="javascript:void(0)"></a>
+    
+            </div>
+           <script type="text/javascript">
+            jQuery(".slideBox_pin1").slide({mainCell:".bd ul",autoPlay:true});
+            </script>
+    
+    </div>
+
+</div>
+
+<div class="item-slide new-item" >
+ <p class="item-desc">            推荐给您的品牌及热销      </p>
+      <div id="slideBox_pin2" class="slideBox_pin2">               
+                <div class="bd">
+                    <ul>
+                        <li>{insert name='ads' id=19 num=1}</li>
+                        <li>{insert name='ads' id=20 num=1}</li>
+                        <li>{insert name='ads' id=21 num=1}</li>
+                        <li>{insert name='ads' id=22 num=1}</li>
+                    </ul>
+                </div>
+                <div class="hd">
+                    <ul><li></li><li></li><li></li><li></li></ul>
+                </div>
+                <!-- 下面是前/后按钮代码，如果不需要删除即可 -->
+                <a class="prev" href="javascript:void(0)"></a>
+                <a class="next" href="javascript:void(0)"></a>
+    
+            </div>
+           <script type="text/javascript">
+            jQuery(".slideBox_pin2").slide({mainCell:".bd ul",autoPlay:true});
+            </script>
+
+</div>
+
+<div class="item-slide new-item">
+ <p class="item-desc">            您可能感兴趣的品牌推荐      </p>
+      <div id="slideBox_pin3" class="slideBox_pin3">               
+                <div class="bd">
+                    <ul>
+                        <li>{insert name='ads' id=23 num=1}</li>
+                        <li>{insert name='ads' id=24 num=1}</li>
+                        <li>{insert name='ads' id=25 num=1}</li>
+                    </ul>
+                </div>
+                <div class="hd">
+                    <ul><li></li><li></li><li></li></ul>
+                </div>
+                <!-- 下面是前/后按钮代码，如果不需要删除即可 -->
+                <a class="prev" href="javascript:void(0)"></a>
+                <a class="next" href="javascript:void(0)"></a>
+    
+            </div>
+           <script type="text/javascript">
+            jQuery(".slideBox_pin3").slide({mainCell:".bd ul",autoPlay:true});
+            </script>
+
+</div>
+
+<div class="item-slide new-item">
+ <p class="item-desc">            热门积分换购      </p>
+      <div id="slideBox_pin3" class="slideBox_pin3">               
+                <div class="bd">
+                    <ul>
+                        <li>{insert name='ads' id=66 num=1}</li>
+                        <li>{insert name='ads' id=67 num=1}</li>
+                        <li>{insert name='ads' id=68 num=1}</li>
+                    </ul>
+                </div>
+                <div class="hd">
+                    <ul><li></li><li></li><li></li></ul>
+                </div>
+                <!-- 下面是前/后按钮代码，如果不需要删除即可 -->
+                <a class="prev" href="javascript:void(0)"></a>
+                <a class="next" href="javascript:void(0)"></a>
+    
+            </div>
+           <script type="text/javascript">
+            jQuery(".slideBox_pin3").slide({mainCell:".bd ul",autoPlay:true});
+            </script>
+
+</div>

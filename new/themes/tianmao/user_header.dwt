@@ -1,0 +1,35 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+body{font-family: '微软雅黑', 'Microsoft YaHei', Arial, Helvetica, sans-serif;}
+.userheader{height:40px;line-height:36px;width:120px;text-align:left;}
+.userheader_nologin{height:40px;line-height:36px;width:100px;text-align:center;}
+.userheader a, .userheader_nologin a{color:#fff;text-decoration: none;font-size:12px;}
+	</style>
+{if $user_id}
+<div class="userheader">
+	<a href="user.php" target="_top">{$user_info.username}</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="user.php?act=logout&backurl=http://www.aishoubao.com" target="_top">{$lang.user_logout}</a>
+</div>
+{else}
+<div class="userheader_nologin">
+ <a class="sn-login" href="user.php?backurl=http://www.aishoubao.com" target="_top">登录</a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="sn-register" href="user.php?act=register&backurl=http://www.aishoubao.com" target="_top">注册</a>
+</div>
+{/if}
+	<script>
+	// document.domain = 'aishoubao.com';
+ //    function calcPageHeight(doc) {
+ //        var cHeight = Math.max(doc.body.clientHeight, doc.documentElement.clientHeight)
+ //        var sHeight = Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight)
+ //        var height  = Math.max(cHeight, sHeight)
+ //        return height
+ //    }
+ //    function calcPageWidth(doc) {
+ //        var cWidth = Math.max(doc.body.clientWidth, doc.documentElement.clientWidth)
+ //        var sWidth = Math.max(doc.body.scrollWidth, doc.documentElement.scrollWidth)
+ //        var Width  = Math.max(cWidth, sWidth)
+ //        return Width
+ //    }
+    // window.onload = function() {
+    //     var Width = calcPageWidth(document)
+    //     parent.document.getElementById('iframepage').style.Width = Width + 'px'     
+    // }
+	</script>

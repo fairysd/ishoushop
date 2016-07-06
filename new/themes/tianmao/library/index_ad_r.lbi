@@ -1,0 +1,13 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<ul class="grid-col-190 cat-small-banner">
+  <li class="J_DirectPromo" >
+    {insert name='ads' id=27 num=1}
+</li>
+  <li class="J_DirectPromo" >
+    {insert name='ads' id=28 num=1}
+</li>
+  <li id="J_SmallBannerAd">{insert name='ads' id=29 num=1}
+ </li>
+    
+    
+</ul>

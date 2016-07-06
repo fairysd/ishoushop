@@ -1,0 +1,51 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="mod_picfold clearfix">
+
+
+  <div id="detail_main_img" class="imgbox">
+    <div class="layout_wrap">
+      <div class="prodimg"  title="{$goods.goods_name|escape:html}">  <a href="{$pictures.0.img_url}" class="MagicZoomPlus" id="Zoomer" rel="hint-text: ; selectors-effect: false; selectors-class: on; zoom-distance: 22;zoom-width: 440; zoom-height: 440;" onclick="window.open('gallery.php?id={$goods.goods_id}'); return false;"><img id="J_prodImg" src="{$goods.goods_img}" alt="{$goods.goods_name|escape:html}" /></a></div>
+      <div class="tabbox clearfix">
+        <div id="detail_img_slider" class="imgtab">
+          <div class="imgtab_clip" id="J_tabSlider">
+            <ul class="imgtab_con">
+              <!-- {if $pictures}--> 
+              <!-- {foreach from=$pictures item=picture name=foo}-->
+              <li {if $smarty.foreach.foo.first}class="cur"{/if}> <a href="{if $picture.img_url}{$picture.img_url}{else}{$picture.thumb_url}{/if}" rel="zoom-id: Zoomer" rev="{if $picture.img_url}{$picture.img_url}{else}{$picture.thumb_url}{/if}"><img src="{if $picture.thumb_url}{$picture.thumb_url}{else}{$picture.img_url}{/if}" alt="{$goods.goods_name}"></a> </li>
+              <!--{/foreach}--> 
+              <!-- {/if}-->
+            </ul>
+          </div>
+          <div id="detail_imgNextOrPreBtnDiv" class="imgtab_trrigle"> <a href="javascript:void(0);" class="pre_btn"> << </a> <a href="javascript:void(0);" class="next_btn"> >></a> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="tm-action tm-clear">
+     
+  
+      <!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" style="float:left">
+<span class="bds_more">分享到：</span>
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&uid=2733582" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+  
+  <p style="float:left; padding-left:20px;"><a id="J_AddFavorite" href="javascript:collect({$goods.goods_id})" class="favorite" ><i></i>收藏商品</a></p>
+  
+			
+				    </div>
+  
+</div>

@@ -1,0 +1,23 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="good_top10">
+<h3><span>宝贝排行榜</span></h3>
+
+ <div class="news_left">
+      <ul>
+        <!-- {foreach name=top_goods from=$top_goods item=goods}-->
+        <li>
+          <div class="topimg"> <a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" style=" width:42px; height:42px" /></a></div>
+       
+         
+          <div class="top_txt"> <b><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name}</a></b>
+            <p><font class="f1">{$goods.price}</font></p>
+            <p>已售出{$goods.goods_number}笔</p>
+          </div>
+        </li>
+        <!-- {/foreach} -->
+      </ul>
+      </div>
+</div>      
+       
+
+<div class="blank5"></div>

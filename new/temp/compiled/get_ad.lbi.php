@@ -1,0 +1,2 @@
+<a href="affiche.php?ad_id=<?php echo $this->_var['ad']['ad_id']; ?>&amp;uri=<?php echo $this->_var['ad']['ad_link']; ?>">
+<img src="<?php echo $this->_var['src']; ?>" width="<?php echo $this->_var['ad']['ad_width']; ?>" height="<?php echo $this->_var['ad']['ad_height']; ?>"/>  <?php if ($this->_var['ad']['class']): ?><div class="<?php echo $this->_var['ad']['class']; ?>"></div><?php endif; ?></a>

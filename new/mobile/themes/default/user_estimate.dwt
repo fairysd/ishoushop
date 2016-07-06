@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>{$page_title}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link href="images/touch-icon.png" rel="apple-touch-icon-precomposed" />
+<link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+{* 包含脚本文件 *}
+{insert_scripts files='transport.js,common.js,user.js'}
+<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+</head>
+<body>
+<div id="tbh5v0">
+  <div class="login">
+    <!--#回收订单列表界面 start-->
+    <!-- {if $action eq 'estimate_list'} -->
+    <header id="header">
+      <div class="header_l header_return"> <a class="ico_10" href="user.php"> 返回 </a> </div>
+      <h1> 我的回收订单 </h1>
+      <div class="header_r header_search"> <a class="ico_16" href="user.php"> 会员中心 </a> </div>
+    </header>
+    <section class="wrap order_list">
+      <section class="order_box padd1 radius10 single_item">
+       <!--{foreach from=$estimateOrds item=item}-->
+        <table width="100%" border="0" cellpadding="5" cellspacing="0" class="ectouch_table">
+          <tr>
+            <td class="order_status" style="border-bottom:1px #CCCCCC dashed">{$item[status]}</td>
+          </tr>
+          <tr>
+            <td class="order_content">
+              <a href="user.php?act=estimate_list_detail&id={$item[id]}">
+              <table width="100%" cellspacing="0" cellpadding="5" border="0" class="ectouch_table_no_border"><tbody>
+              <tr>
+                <td>{$item[productName]}</td>
+                <td>订单编号：{$item[tradeNo]}<br>订单金额：￥{$item[estimatePrice]}<br>下单时间：{$item[createTime]}</td>
+                <td style="position:relative"><span class="new-arr"></span></td>
+                </tr>
+                </tbody>
+              </table>
+              </a>
+              <!-- {if $item[status] eq '等待验货'} -->
+              <a class="c-btn4" href="user.php?act=estimate_cancel&id={$item[id]}" onclick="if (!confirm('您确认要取消该订单吗？取消后此订单将视为无效订单')) return false;">取消订单</a>
+              <!--{/if}-->
+            </td>
+          </tr>
+        </table>
+        <!--{/foreach}-->
+      </section>
+      <a href="javascript:;" style="text-align:center" class="get_more"></a> </section>
+    <script type="text/javascript" src="js/jquery.more.js"></script>
+    <!--{/if}-->
+    <!--#回收订单列表界面 end-->
+   
+    <!-- ==========回收订单详情页面,包括：订单状态，商品列表，费用总计，收货人信息，支付方式，其它信息========== -->
+    <!--{if $action eq estimate_list_detail} -->
+    <header id="header">
+      <div class="header_l header_return"> <a class="ico_10" href="javascript:history.go(-1)"> 返回 </a> </div>
+      <h1> 订单状态 </h1>
+      <div class="header_r header_search"> <a class="ico_16" href="user.php"> 会员中心 </a> </div>
+    </header>
+    <section class="wrap">
+      <section class="order_box padd1 radius10">
+        <table width="100%" border="0" cellpadding="5" cellspacing="0" class="ectouch_table">
+          <tr>
+            <td>订单状态：{$estimateDetail.status}</td>
+          </tr>
+          <tr>
+            <td>订单编号：{$estimateDetail.tradeNo}</td>
+          </tr>
+          <tr>
+            <td>订单金额：￥{$estimateDetail.estimatePrice}</td>
+          </tr>
+          <tr>
+            <td>下单时间：{$estimateDetail.createTime}</td>
+          </tr>
+          <tr>
+            <td>交易方式：{if $estimateDetail.tradeType=="2"}快递交易{/if}{if $estimateDetail.tradeType=="1"}门店交易{/if}</td>
+          </tr>
+          {if $estimateDetail.tradeType=="1"}
+        <tr>
+        <td>门店信息：地址：{$estimateDetail.orgAddress} 电话：{$estimateDetail.orgTel}</td>
+        </tr>
+        {/if}
+        <tr>
+          <td>支付方式：{if $estimateDetail.payType=="1"}现金交易{/if}{if $estimateDetail.payType=="2"}银行转账{/if}{if $estimateDetail.payType=="3"}支付宝支付{/if}{if $estimateDetail.payType=="4"}微信支付{/if}</td>
+        </tr>
+        {if $estimateDetail.payType=="2"}
+        <tr>
+          <td>银行名称: {$estimateDetail.bankName}</td>
+        </tr>
+        <tr>
+          <td>账户名: {$estimateDetail.accountName}</td>
+        </tr>
+        <tr>
+          <td>银行卡号: {$estimateDetail.bankCardno}</td>
+        </tr>
+        {/if}
+        {if $estimateDetail.payType=="3"}
+        <tr>
+          <td>支付宝帐号: {$estimateDetail.accountName}</td>
+        </tr>
+        {/if}
+        {if $estimateDetail.payType=="4"}
+        <tr>
+          <td>帐号: {$estimateDetail.accountName}</td>
+        </tr>
+        {/if}
+        </table>
+      </section>
+      
+      <section class="order_box padd1 radius10">
+        <table width="100%" border="0" cellpadding="5" cellspacing="0" class="ectouch_table">
+          <tr>
+            <td>{$estimateDetail.productName}<br>{$estimateDetail.fullPropertyOptions|nl2br} {$estimateDetail.diamondRemark|nl2br}</td>
+          </tr>
+          <tr>
+            <td style="border-bottom:1px #CCCCCC dashed">回收价：￥{$estimateDetail.estimatePrice}</td>
+          </tr>
+        </table>
+      </section>
+    <!--{/if} -->
+    <!--#回收订单详情页 end-->
+    
+    <!--#抵押意向列表界面 start-->
+    <!-- {if $action eq 'mortgageintention_list'} -->
+    <header id="header">
+      <div class="header_l header_return"> <a class="ico_10" href="user.php"> 返回 </a> </div>
+      <h1> 我的抵押意向 </h1>
+      <div class="header_r header_search"> <a class="ico_16" href="user.php"> 会员中心 </a> </div>
+    </header>
+    <section class="wrap order_list">
+      <section class="order_box padd1 radius10 single_item">
+       <!--{foreach from=$mortgages item=item}-->
+        <table width="100%" border="0" cellpadding="5" cellspacing="0" class="ectouch_table">
+          <tr>
+            <td class="order_status" style="border-bottom:1px #CCCCCC dashed">{$item[status]}</td>
+          </tr>
+          <tr>
+            <td class="order_content">
+              <a href="user.php?act=mortgageintention_list_detail&id={$item[id]}">
+              <table width="100%" cellspacing="0" cellpadding="5" border="0" class="ectouch_table_no_border"><tbody>
+              <tr>
+                <td>{$item[productName]}</td>
+                <td>订单编号：{$item[tradeNo]}<br>评估金额：￥{$item[estimatePrice]}<br>下单时间：{$item[createTime]}<br>
+                抵押周期：{$item[mortgageStarttime]} - {$item[mortgageEndtime]}<br>手续费(每天)：{$item[mortgageInterestDay]}%</td>
+                <td style="position:relative"><span class="new-arr"></span></td>
+                </tr>
+                </tbody>
+              </table>
+              </a>
+              <!-- {if $item[status] eq '等待处理'} -->
+              <a class="c-btn4" href="user.php?act=mortgageintention_cancel&id={$item[id]}" onclick="if (!confirm('您确认要取消该订单吗？取消后此订单将视为无效订单')) return false;">取消订单</a>
+              <!--{/if}-->
+            </td>
+          </tr>
+        </table>
+        <!--{/foreach}-->
+      </section>
+      <a href="javascript:;" style="text-align:center" class="get_more"></a> </section>
+    <script type="text/javascript" src="js/jquery.more.js"></script>
+    <!--{/if}-->
+    <!--#抵押意向列表界面 end-->
+
+    <!--抵押意向详情页面x-->
+    <!--{if $action eq mortgageintention_list_detail} -->
+    <header id="header">
+      <div class="header_l header_return"> <a class="ico_10" href="javascript:history.go(-1)"> 返回 </a> </div>
+      <h1> 抵押意向详情 </h1>
+      <div class="header_r header_search"> <a class="ico_16" href="user.php"> 会员中心 </a> </div>
+    </header>
+    <section class="wrap">
+      <section class="order_box padd1 radius10">
+        <table width="100%" border="0" cellpadding="5" cellspacing="0" class="ectouch_table">
+          <tr>
+            <td>订单状态：{$mortgageDetail.status}</td>
+          </tr>
+          <tr>
+            <td>订单编号：{$mortgageDetail.tradeNo}</td>
+          </tr>
+          <tr>
+            <td>下单时间：{$mortgageDetail.createTime}</td>
+          </tr>
+          <tr>
+            <td>抵押周期：{$mortgageDetail.mortgageStarttime} - {$mortgageDetail.mortgageEndtime}</td>
+          </tr>
+          <tr>
+            <td>手续费(每天)：{$mortgageDetail.mortgageInterestDay}%</td>
+          </tr>
+          <tr>
+            <td>交易方式：{if $mortgageDetail.tradeType=="2"}快递交易{/if}{if $mortgageDetail.tradeType=="1"}门店交易{/if}</td>
+          </tr>
+          {if $mortgageDetail.tradeType=="1"}
+        <tr>
+        <td>门店信息：地址：{$mortgageDetail.orgAddress} 电话：{$mortgageDetail.orgTel}</td>
+        </tr>
+        {/if}
+        <tr>
+          <td>支付方式：{if $mortgageDetail.payType=="1"}现金交易{/if}{if $mortgageDetail.payType=="2"}银行转账{/if}{if $mortgageDetail.payType=="3"}支付宝支付{/if}{if $mortgageDetail.payType=="4"}微信支付{/if}</td>
+        </tr>
+        {if $mortgageDetail.payType=="2"}
+        <tr>
+          <td>银行名称: {$mortgageDetail.bankName}</td>
+        </tr>
+        <tr>
+          <td>账户名: {$mortgageDetail.accountName}</td>
+        </tr>
+        <tr>
+          <td>银行卡号: {$mortgageDetail.bankCardno}</td>
+        </tr>
+        {/if}
+        {if $mortgageDetail.payType=="3"}
+        <tr>
+          <td>支付宝帐号: {$mortgageDetail.accountName}</td>
+        </tr>
+        {/if}
+        {if $mortgageDetail.payType=="4"}
+        <tr>
+          <td>帐号: {$mortgageDetail.accountName}</td>
+        </tr>
+        {/if}
+        </table>
+      </section>
+      
+      <section class="order_box padd1 radius10">
+        <table width="100%" border="0" cellpadding="5" cellspacing="0" class="ectouch_table">
+          <tr>
+            <td>{$mortgageDetail.productName}<br>{$mortgageDetail.fullPropertyOptions|nl2br} {$mortgageDetail.diamondRemark|nl2br}</td>
+          </tr>
+          <tr>
+            <td style="border-bottom:1px #CCCCCC dashed">抵押评估价格：￥{$mortgageDetail.estimatePrice}</td>
+          </tr>
+        </table>
+      </section>
+    <!--{/if} -->
+    <!--#抵押意向详情页 end-->
+
+    <!--#抵押列表界面 start-->
+    <!-- {if $action eq 'mortgage_list'} -->
+    <header id="header">
+      <div class="header_l header_return"> <a class="ico_10" href="user.php"> 返回 </a> </div>
+      <h1> 我的抵押 </h1>
+      <div class="header_r header_search"> <a class="ico_16" href="user.php"> 会员中心 </a> </div>
+    </header>
+    <section class="wrap order_list">
+      <section class="order_box padd1 radius10 single_item">
+       <!--{foreach from=$mortgages item=item}-->
+        <table width="100%" border="0" cellpadding="5" cellspacing="0" class="ectouch_table">
+          <tr>
+            <td class="order_status" style="border-bottom:1px #CCCCCC dashed">{$item[status]}</td>
+          </tr>
+          <tr>
+            <td class="order_content">
+              <a href="user.php?act=mortgage_list_detail&id={$item[id]}">
+              <table width="100%" cellspacing="0" cellpadding="5" border="0" class="ectouch_table_no_border"><tbody>
+              <tr>
+                <td>{$item[productName]}</td>
+                <td>订单编号：{$item[tradeNo]}<br>评估金额：￥{$item[estimatePrice]}<br>下单时间：{$item[createTime]}<br>
+                抵押周期：{$item[mortgageStarttime]} - {$item[mortgageEndtime]}<br>手续费(每天)：{$item[mortgageRealInterestDay]}%</td>
+                <td style="position:relative"><span class="new-arr"></span></td>
+                </tr>
+                </tbody>
+              </table>
+              </a>
+            </td>
+          </tr>
+        </table>
+        <!--{/foreach}-->
+      </section>
+      <a href="javascript:;" style="text-align:center" class="get_more"></a> </section>
+    <script type="text/javascript" src="js/jquery.more.js"></script>
+    <!--{/if}-->
+    <!--#抵押列表界面 end-->
+
+    <!--抵押详情页面x-->
+    <!--{if $action eq mortgage_list_detail} -->
+    <header id="header">
+      <div class="header_l header_return"> <a class="ico_10" href="javascript:history.go(-1)"> 返回 </a> </div>
+      <h1> 抵押详情 </h1>
+      <div class="header_r header_search"> <a class="ico_16" href="user.php"> 会员中心 </a> </div>
+    </header>
+    <section class="wrap">
+      <section class="order_box padd1 radius10">
+        <table width="100%" border="0" cellpadding="5" cellspacing="0" class="ectouch_table">
+          <tr>
+            <td>订单状态：{$mortgageDetail.status}</td>
+          </tr>
+          <tr>
+            <td>订单编号：{$mortgageDetail.tradeNo}</td>
+          </tr>
+          <tr>
+            <td>下单时间：{$mortgageDetail.createTime}</td>
+          </tr>
+          <tr>
+            <td>抵押价格：{$mortgageDetail.mortgageRealPrice}</td>
+          </tr>
+          <tr>
+            <td>抵押周期：{$mortgageDetail.mortgageStarttime} - {$mortgageDetail.mortgageEndtime}</td>
+          </tr>
+          <tr>
+            <td>交易方式：{if $mortgageDetail.tradeType=="2"}快递交易{/if}{if $mortgageDetail.tradeType=="1"}门店交易{/if}</td>
+          </tr>
+          {if $mortgageDetail.tradeType=="1"}
+        <tr>
+        <td>门店信息：地址：{$mortgageDetail.orgAddress} 电话：{$mortgageDetail.orgTel}</td>
+        </tr>
+        {/if}
+        <tr>
+          <td>支付方式：{if $mortgageDetail.payType=="1"}现金交易{/if}{if $mortgageDetail.payType=="2"}银行转账{/if}{if $mortgageDetail.payType=="3"}支付宝支付{/if}{if $mortgageDetail.payType=="4"}微信支付{/if}</td>
+        </tr>
+        {if $mortgageDetail.payType=="2"}
+        <tr>
+          <td>银行名称: {$mortgageDetail.bankName}</td>
+        </tr>
+        <tr>
+          <td>账户名: {$mortgageDetail.accountName}</td>
+        </tr>
+        <tr>
+          <td>银行卡号: {$mortgageDetail.bankCardno}</td>
+        </tr>
+        {/if}
+        {if $mortgageDetail.payType=="3"}
+        <tr>
+          <td>支付宝帐号: {$mortgageDetail.accountName}</td>
+        </tr>
+        {/if}
+        {if $mortgageDetail.payType=="4"}
+        <tr>
+          <td>帐号: {$mortgageDetail.accountName}</td>
+        </tr>
+        {/if}
+        </table>
+      </section>
+      
+      <section class="order_box padd1 radius10">
+        <table width="100%" border="0" cellpadding="5" cellspacing="0" class="ectouch_table">
+          <tr>
+            <td>{$mortgageDetail.productName}<br>{$mortgageDetail.fullPropertyOptions|nl2br} {$mortgageDetail.diamondRemark|nl2br}</td>
+          </tr>
+          <tr>
+            <td style="border-bottom:1px #CCCCCC dashed">抵押评估价格：￥{$mortgageDetail.estimatePrice}</td>
+          </tr>
+        </table>
+      </section>
+
+      <!--{foreach from=$mortgageLogs item=item}-->
+      <section class="order_box padd1 radius10">
+        <table width="100%" border="0" cellpadding="5" cellspacing="0" class="ectouch_table">
+          <tr><td>记录时间: {$item.operateTime}</td></tr>
+            <tr><td>抵押动作: {$item.operateCmd}</td></tr>
+            <tr><td>抵押周期: {$item.logMortgageStarttime} - {$item.logMortgageEndtime}</td></tr>
+            <tr><td>手续费(%/天): {$item.logMortgageRealInterestDay}</td></tr>
+            <tr><td>应付手续费: ￥{$item.logMortgageExpectEarnings}</td></tr>
+            <tr><td>已付手续费: ￥{$item.logMortgageRealEarnings}</td></tr>
+            <tr><td>备注: {$item.operateComment}</td></tr>
+        </table>
+      </section>
+      <!--{/foreach}-->
+    <!--{/if} -->
+    <!--#抵押详情页 end-->
+
+    <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> </div>
+</div>
+<div style="width:1px; height:1px; overflow:hidden">{foreach from=$lang.p_y item=pv}{$pv}{/foreach}</div>
+</body>
+<script type="text/javascript">
+{foreach from=$lang.clips_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+</script>
+</html>
