@@ -149,14 +149,14 @@
             function changenum(rec_id, diff)
             {
                 var goods_number =Number($('#goods_number_' + rec_id).val()) + Number(diff);    
-				if(goods_number < 1)
-				{
-					alert("购买数量不能少于1件");	
-				}
-				else
-				{
-					change_goods_number(rec_id,goods_number);
-				}
+        if(goods_number < 1)
+        {
+          alert("购买数量不能少于1件");  
+        }
+        else
+        {
+          change_goods_number(rec_id,goods_number);
+        }
             }
             function change_goods_number(rec_id, goods_number)
             {     
@@ -301,15 +301,15 @@
         <form action="flow.php" method="post" class="postform">
          
              <div class="picScroll-left3">
-			<div class="hd">
-				<a class="next"><s></s></a>				
-				<a class="prev"><s></s></a>
-			</div>
+      <div class="hd">
+        <a class="next"><s></s></a>       
+        <a class="prev"><s></s></a>
+      </div>
             
-			<div class="bd">
-				<ul class="picList">
-					
-					 <!-- {foreach from=$fittings_list item=fittings} -->
+      <div class="bd">
+        <ul class="picList">
+          
+           <!-- {foreach from=$fittings_list item=fittings} -->
               
               <li> <a href="{$fittings.url}" target="_blank"><img src="{$fittings.goods_thumb}" alt="{$fittings.name|escape:html}" width="160" height="160" /></a>
                   <div class="price"><strong>{$fittings.fittings_price}</strong></div>
@@ -319,12 +319,12 @@
                </li>
               
               <!-- {/foreach} 循环商品配件结束 -->
-				</ul>
-			</div>
-			<script type="text/javascript">
-		jQuery(".picScroll-left3").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,scroll:5,vis:5});
-		</script>
-		</div>
+        </ul>
+      </div>
+      <script type="text/javascript">
+    jQuery(".picScroll-left3").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,scroll:5,vis:5});
+    </script>
+    </div>
           
          
         </form>
@@ -875,14 +875,14 @@
     <div class="block_s">
       
       <div class=" ">
-        <div class="coLoginBody_left">
+        <!-- <div class="coLoginBody_left">
           <div class="coLogin_title">
             <p><span>新用户，请注册</span></p>
           </div>
           <div class="coLogin_box">
             <form action="flow.php?step=login" method="post" name="formUser" id="registerForm" onsubmit="return checkSignupForm(this)">
               <div class="coLogin_one">
-                <p>{$lang.username}：</p>
+                <p>{$lang.username}：</p>               
                 <div class="">
                   <div class="coLogin_txt_all">
                     <input name="username" type="text" class="coLogin_txts" id="username" onblur="is_registered(this.value);" />
@@ -913,7 +913,7 @@
                   </div>
                 </div>
                 <span style="color:#ff4560" id="conform_password_notice"></span> </div>
-              <!-- 判断是否启用验证码{if $enabled_register_captcha} -->
+              判断是否启用验证码{if $enabled_register_captcha}
               <div class="coLogin_one">
                 <p>{$lang.comment_captcha}:</p>
                 <div class="coLoginTxt_2">
@@ -923,17 +923,17 @@
                   <div class="coLoginTxt_2_img"><img src="captcha.php?{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?'+Math.random()" /> </div>
                 </div>
               </div>
-              <!--{/if}-->
+              {/if}
               <div class="coLogin_three">
                 <input type="submit" name="Submit" class="biLogin_btn" value="{$lang.forthwith_register}" />
                 <input name="act" type="hidden" value="signup" />
               </div>
             </form>
           </div>
-        </div>
-        <div class="coLoginBody_right">
+        </div> -->
+        <div class="coLoginBody_right"style="float:none;margin:50px auto">
           <div class="coLogin_title">
-            <p><span>老用户，请登录</span></p>
+            <p><span>请登录</span></p>
           </div>
           <div class="coLogin_box_right">
           <form action="flow.php?step=login" method="post" name="loginForm" id="loginForm" onsubmit="return checkLoginForm(this)">
