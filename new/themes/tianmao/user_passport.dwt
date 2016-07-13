@@ -426,7 +426,7 @@
   <div class="usBox_2 clearfix">
     <form action="user.php" method="post" name="getPassword2" onSubmit="return submitPwd()">
       <br />
-      <table  border="0" align="left" style="margin:0 auto;">
+      <table  border="0" align="center" style="margin:70px auto;">
         <tr>
           <td width="20%">{$lang.new_password}</td>
           <td ><input name="new_password" type="password" size="25" class="inputBg" /></td>

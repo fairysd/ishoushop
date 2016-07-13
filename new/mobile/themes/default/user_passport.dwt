@@ -36,7 +36,7 @@
           <form name="formLogin" action="user.php" method="post" onSubmit="return userLogin()">
             <dl>
               <dd>
-                <input placeholder="用户名" name="username" type="text" class="inputBg" style="border:1px solid #ddd" id="username" />
+                <input placeholder="手机号" name="username" type="text" class="inputBg" style="border:1px solid #ddd" id="username" />
               </dd>
             </dl>
             <dl>
@@ -46,7 +46,7 @@
             </dl>
             <!-- 判断是否启用验证码{if $enabled_captcha} -->
             <dl>
-            	<dd>
+              <dd>
             <input type="text" name="captcha"  id="J_AuthCodeTxt" placeholder="验证码" class="inputBg" style="border:1px solid #ddd" style="width:100px">
              <img src="captcha.php?is_login=1&{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?is_login=1&'+Math.random()" />
              </dd>
@@ -79,10 +79,10 @@
     <div class="bd" <!-- {if !$regFg} --> style="display:none"<!--{/if}-->>
     <!-- {if $shop_reg_closed eq 1} -->
     <section class="innercontent">
-		<div style="text-align:center">
-		{$lang.shop_register_closed}
-		</div>
-	</section>
+    <div style="text-align:center">
+    {$lang.shop_register_closed}
+    </div>
+  </section>
     <!-- {else} -->
       <ul style="height:25rem">
         <form action="user.php" method="post" name="formUser" onsubmit="return register();">
@@ -90,7 +90,7 @@
           <div class="table_box">
             <dl>
               <dd>
-                <input placeholder="请输入用户名" class="inputBg" style="border:1px solid #ddd" name="username" id="username" type="text" />
+                <input placeholder="请输入手机号" class="inputBg" style="border:1px solid #ddd" name="extend_field5" id="extend_field5i" type="text" />
               </dd>
             </dl>
             <dl>
@@ -108,14 +108,16 @@
                 <input placeholder="请重新输入一遍密码" class="inputBg" style="border:1px solid #ddd" name="confirm_password" id="confirm_password" type="password" />
               </dd>
             </dl>
-            <dl>
+            <dl style="display:none;">
               <dd>
-                <input placeholder="请输入手机号" class="inputBg" style="border:1px solid #ddd" name="extend_field5" id="extend_field5i" type="text" />
+                <input placeholder="请输入用户名" class="inputBg registerHidden" style="border:1px solid #ddd" name="username" id="username" type="text" />
               </dd>
             </dl>
             <!-- 判断是否启用验证码{if $enabled_captcha} -->
+
+
             <dl>
-            	<dd>
+              <dd>
             <input name="captcha" type="tel" value="" placeholder="输入验证码" class="inputBg" style="border:1px solid #ddd" style="width:100px">
              <img src="captcha.php?{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?'+Math.random()" /> 
              </dd>
@@ -143,8 +145,17 @@
   </div>
 </section>
 <!--{/if}-->
-
+<script type="text/javascript">
+            $(function(){
+                $("#extend_field5i").blur(function(){
+                  var phoneNum = $("#extend_field5i").val();
+                  console.log(phoneNum);                  
+                  $(".registerHidden").val(phoneNum);
+                })
+            });
+            </script>
 <!--{if $action eq 'get_password'} -->
+
 {insert_scripts files='utils.js'}
 <script type="text/javascript">
 {foreach from=$lang.password_js item=item key=key}
@@ -167,7 +178,7 @@
           <div class="table_box">
             <dl>
               <dd>
-                <input placeholder="用户名" class="inputBg" style="border:1px solid #ddd" name="user_name" type="text" />
+                <input placeholder="手机号" class="inputBg" style="border:1px solid #ddd" name="user_name" type="text" />
               </dd>
             </dl>
             <dl>
@@ -192,11 +203,11 @@
 
 <script type="text/javascript">
 jQuery(function($){
-	$('.hd ul li').click(function(){
-		var index = $('.hd ul li').index(this);
-		$(this).addClass('on').siblings('li').removeClass('on');
-		$('.loginBox .bd:eq('+index+')').show().siblings('.bd').hide();
-	})
+  $('.hd ul li').click(function(){
+    var index = $('.hd ul li').index(this);
+    $(this).addClass('on').siblings('li').removeClass('on');
+    $('.loginBox .bd:eq('+index+')').show().siblings('.bd').hide();
+  })
 })
 </script>
 
