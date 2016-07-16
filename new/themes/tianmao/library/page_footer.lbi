@@ -2,30 +2,30 @@
 <style>
   /* footer */
 .footer_nav {
-    display: flex;
-    font-size: 12px;
+    overflow: hidden;
+    font-size: 14px;
     padding-bottom: 30px;
-    width:1200px;
-    margin:auto;
+    width: 1200px;
+    margin: 0 auto;
     }
-.footer_nav a { color: #717171;text-decoration:none; }
+.footer_nav a { color: #717171;font-size: 14px; font-family: '微软雅黑', 'SimHei', Arial, Helvetica, sans-serif;}
+.footer_nav a:hover{color:#e1882a;text-decoration: none;}
 .footer_nav > ul {
-    padding-right: 70px;
+    float: left;
+    padding-right: 103px;
     line-height: 28px;
     }
-.footer_nav  ul li{list-style:none;}
 .footer_nav > ul:first-child { padding-left: 15px; }
 .footer_nav > ul li:first-child { font-weight: bold; }
-.nav_r { padding-left: 30px; }
-.nav_r span { display: block; }
+.nav_r { float: left; }
+.nav_r span { display: block; width: 200px;margin-left: 150px;margin-top: 6px;}
 .nav_r span i { font-style: normal; }
 .nav_r span:nth-child(2) {
     font-size: 20px;
-    line-height: 53px;
-    color:#b50202;
+    line-height: 45px;
     }
 .nav_r span:last-child {
-    font-family: '黑体', 'SimHei', Arial, Helvetica, sans-serif;
+    font-family: '微软雅黑', 'SimHei', Arial, Helvetica, sans-serif;
     }
 .footer_fix {
     min-width: 1201px;
@@ -35,25 +35,29 @@
     color: #fff;
     line-height: 40px;
     }
+.footer_fix_1 {
+    min-width: 1201px;
+    background-color: #ddd;
+    height: 1px;
+}
 .footer_fix ul {
-    display: flex;
-    margin-left: 120px;
-    margin-top: 0;
-    }
+    overflow: hidden;
+}
 .footer_fix li {
+    float: left;
     position: relative;
     padding-left: 141px;
-    list-style:none;
+
     }
 .footer_fix li:before {
     content: '';
     display: block;
     position: absolute;
     left: 104px;
-    top: 4px;
+    top:4px;
     width: 35px;
     height: 35px;
-    background: url("themes/tianmao/images/icon.png") no-repeat 0 0;
+    background: url("../images/new/icon.png") no-repeat 0 0;
     }
 .footer_fix li:nth-child(2):before {
     background-position-y: -44px;
@@ -78,21 +82,66 @@
     color: #717171;
     }
 .footer_bottom .out_box {
-    display: flex;
+    overflow: hidden;
     padding-top: 20px;
     padding-bottom: 30px;
-    width:1200px;
-    margin:auto;
-    }
+}
+.footer_bottom .out_box > div{
+    float: left;
+}
 .footer_bottom .out_box > div:first-child {
     padding-left: 13px;
     width: 755px;
     }
-.footer_bottom .out_box > div div:first-child a { padding-right: 28px;text-decoration:none; }
-.footer_bottom .out_box > div div:nth-child(3) a { padding-right: 15px; text-decoration:none;}
+.footer_bottom .out_box > div div:first-child a { padding-right: 28px; }
+.footer_bottom .out_box > div div:nth-child(3) a { padding-right: 15px; }
 .footer_bottom .out_box > div div img { margin: 10px 20px 0 0; }
 .nav_r_1{margin-top: 16px;}
-.red{color:red;}
+.red1{    font-size: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #b50202;}
+.vip {
+    font-size: 18px;
+    color: #323232;
+    font-style: italic;
+    padding-left: 20px;
+}
+.friendlink{
+    width: 1200px;
+    margin: 0 auto;
+}
+.friendlink ul {
+    padding-left: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.friendlink ul li {
+    display: inline;
+    padding-right: 10px;
+    color: #717171;
+}
+.friendlink ul li a {
+    color: #717171;
+}
+.footer_fix_2 {
+    background-color: #efeff4;
+    font-size: 12px;
+    color: #909090;
+    text-align: center;
+    padding: 20px 0;
+}
+.out_box {
+    width: 1200px;
+    margin: 0 auto;
+}
+.footer_fix_2 img {
+    margin: 10px 20px 0 0;
+}
+.footer_fix_2 .footer_copy {
+    padding-top: 20px;
+    padding-bottom: 0;
+}
 </style>
 <div class="j_LazyloadCon fp-lazyload-con">
   <div id="footer">
@@ -114,13 +163,13 @@
           <dd><a href="#" class="join"><img src="../images/foot_weixin.jpg" width="116" height="116" alt="手机天猫"></a> </dd>
         </dl>
       </div> -->
-      <footer class = "Global_footer">
+<footer class = "Global_footer">
     <div class = "out_box footer_nav">
         <ul>
             <li>关于我们</li>
-            <li><a href = "http://www.aishoubao.com/help/gsjj">公司简介</a></li>
-            <li><a href = "http://www.aishoubao.com/help/fzlc">发展历程</a></li>
-            <li><a href = "http://www.aishoubao.com/help/zsjm">招商加盟</a></li>
+            <li><a href = "http://www.aishoubao.com/help/gsjj">走进爱收宝</a></li>
+            <li><a href = "http://www.aishoubao.com/help/fzlc">我们一路走来</a></li>
+            <li><a href = "http://www.aishoubao.com/help/lxwm">诚聘精英</a></li>
             <li><a href = "http://www.aishoubao.com/help/lxwm">联系我们</a></li>
         </ul>
         <ul>
@@ -138,46 +187,43 @@
         </ul>
         <ul>
             <li>售后服务</li>
-            <li><a href = "http://www.aishoubao.com/help/wlth">七天无理由退换</a></li>
+            <li><a href = "http://www.aishoubao.com/help/wlth">48小时退货</a></li>
             <li><a href = "http://www.aishoubao.com/help/sqtk">如何申请退款</a></li>
             <li><a href = "http://www.aishoubao.com/help/bjsm">维修补件说明</a></li>
         </ul>
-        <ul>
+        <ul style="border-right: 1px solid #ddd;padding-right: 140px;">
             <li>购物保障</li>
             <li><a href = "http://www.aishoubao.com/help/zpbz">正品保障</a></li>
             <li><a href = "http://www.aishoubao.com/help/zcxy">注册协议</a></li>
             <li><a href = "http://www.aishoubao.com/help/bzys">保护隐私</a></li>
             <li><a href = "http://www.aishoubao.com/help/mzsm">免责声明</a></li>
         </ul>
-        <div class = "nav_r" style="margin-left: 150px;">
-            <span class = "nav_r_1">全国服务热线</span>
-            <span class = "red1">400-086-1131</span>
-            <span>在全国范围内已有体验店近<i class = "red">百家</i></span>
+        <div class = "serviceRx">
+            <p><span class="vip">服务热线:</span><span class = "red1">400-086-1131</span>
+                <img style="padding:20px;" src = "themes/tianmao/images/qrcode.jpg">
+            </p>
         </div>
     </div>
-    <div class = "footer_fix">
-        <ul class = "out_box">
-            <li>回收价格公道</li>
-            <li>100%正品保证</li>
-            <li>权威宝贝鉴定</li>
-            <li>服务贴心周到</li>
-            <li>售后全国联保</li>
+    <div class = "footer_fix_1"></div>
+    <div class="out_box friendlink">
+        <ul>
+            <li>友情链接:</li>
+            <li><a href="${mybaseurl}/product/8fa078e445184f1f9041ea1be763a5e8?ptype=gjs&goldType=gold">黄金回收</a></li>
+            <li><a href="${mybaseurl}/product/21577fd8a5324e62a416978d15367515?ptype=gjs&goldType=pt">贵金属回收</a></li>
+            <li><a href="${mybaseurl}/product/diamond">钻石回收</a></li>
+            <li><a href="${mybaseurl}/category/08d2d4cbf3974d8i8d56b26ba29266aa/0">名包回收</a></li>
+            <li><a href="${mybaseurl}/category/08d2d4cbff6j48f08d56b26ba29266aa/0">名表回收</a></li>
+            <li><a href="${mybaseurl}/">奢侈品回收</a></li>
+            <li><a href="${mybaseurl}/category/08d2d4cbf39748f08d56b26ba29266aa/0">手机回收</a></li>
+            <li><a href="${mybaseurl}/category/08d2d4cbf39748f08d56b26ba29266aa/0">数码回收</a></li>
         </ul>
     </div>
-    <div class = "footer_bottom">
-        <div class = "out_box">
-            <div>
-                <div><a href = "http://www.aishoubao.com/?cityId=856">爱收宝网</a> <a href = "http://www.aishoubao.com/?cityId=856">爱收宝金融</a> <a href = "http://www.aishoubao.com/luxury">爱收宝奢侈品养护</a> <a href = "http://www.aishoubao.com/help/zsjm">爱收宝招商</a>
-                    <a href = "http://www.aishoubao.com/?cityId=856">爱收宝商学院</a> <a href = "http://www.aishoubao.com/luxury/hotkey/A">奢侈品热词</a></div>
-                <div>统一社会信用代码91320506MA1M96GQ9G ICP备案苏ICP备15052824号-1</div>
-                <div>友情链接：<a href = "http://www.aishoubao.com/product/8fa078e445184f1f9041ea1be763a5e8?ptype=gjs&goldType=gold">黄金回收</a> <a href = "http://www.aishoubao.com/product/diamond">钻石回收</a> <a href = "http://www.aishoubao.com/category/08d2d4cbf3974d8i8d56b26ba29266aa/0">名包回收</a> <a href = "http://www.aishoubao.com/category/08d2d4cbff6j48f08d56b26ba29266aa/0">名表回收</a> <a
-                        href = "http://www.aishoubao.com/">奢侈品回收</a> <a href = "http://www.aishoubao.com/">购物卡回收</a></div>
-                <div>Copyright ©2015 苏州爱收宝网络科技有限公司 版权所有</div>
-                <div><img src = "../images/down1.jpg"><img src = "../images/down2.jpg"><img src = "../images/down3.jpg"><img
-                        src = "../images/down4.jpg"></div>
-            </div>
-            <div><img src = "../images/down_l2.png"></div>
+    <div class = "footer_fix_1"></div>
+    <div class = "footer_fix_2">
+        <div class="out_box">
+            <div><img src = "http://www.aishoubao.com/res/images/new/down1.jpg"><img src = "http://www.aishoubao.com/res/images/new/down2.jpg"><img src = "http://www.aishoubao.com/res/images/new/down3.jpg"><img src = "http://www.aishoubao.com/res/images/new/down4.jpg"></div>
         </div>
+        <div class="footer_copy">统一社会信用代码91320506MA1M96GQ9G ICP备案苏ICP备15052824号-1 Copyright ©2016 苏州爱收宝网络科技有限公司 版权所有</div>
     </div>
 </footer>
 
@@ -194,52 +240,7 @@
   <!-- 结束ICP 证书{/if} -->
   <div></div>
 
-<div class="blank"></div>
 <!--版权 start-->
-<div id="footer" style="height:1px; width:1px; overflow:hidden; background:none;">
-  <div class="text"> {$copyright}<br />
-    {$shop_address} {$shop_postcode}
-    <!-- 客服电话{if $service_phone} -->
-    Tel: {$service_phone}
-    <!-- 结束客服电话{/if} -->
-    <!-- 邮件{if $service_email} -->
-    E-mail: {$service_email}<br />
-    <!-- 结束邮件{/if} -->
-    <!-- QQ 号码 {foreach from=$qq item=im} -->
-    <!-- {if $im} -->
-    <a href="http://wpa.qq.com/msgrd?V=1&amp;Uin={$im}&amp;Site={$shop_name}&amp;Menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=1:{$im}:4" height="16" border="0" alt="QQ" /> {$im}</a>
-    <!-- {/if} -->
-    <!-- {/foreach} 结束QQ号码 -->
-    <!-- 淘宝旺旺 {foreach from=$ww item=im} -->
-    <!-- {if $im} -->
-    <a href="http://amos1.taobao.com/msg.ww?v=2&uid={$im|escape:u8_url}&s=2" target="_blank"><img src="http://amos1.taobao.com/online.ww?v=2&uid={$im|escape:u8_url}&s=2" width="16" height="16" border="0" alt="淘宝旺旺" />{$im}</a>
-    <!-- {/if} -->
-    <!--{/foreach} 结束淘宝旺旺 -->
-    <!-- Yahoo Messenger {foreach from=$ym item=im} -->
-    <!-- {if $im} -->
-    <a href="http://edit.yahoo.com/config/send_webmesg?.target={$im}n&.src=pg" target="_blank"><img src="../images/yahoo.gif" width="18" height="17" border="0" alt="Yahoo Messenger" /> {$im}</a>
-    <!-- {/if} -->
-    <!-- {/foreach} 结束Yahoo Messenger -->
-    <!-- MSN Messenger {foreach from=$msn item=im} -->
-    <!-- {if $im} -->
-    <img src="../images/msn.gif" width="18" height="17" border="0" alt="MSN" /> <a href="msnim:chat?contact={$im}">{$im}</a>
-    <!-- {/if} -->
-    <!-- {/foreach} 结束MSN Messenger -->
-    <!-- Skype {foreach from=$skype item=im} -->
-    <!-- {if $im} -->
-    <img src="http://mystatus.skype.com/smallclassic/{$im|escape:url}" alt="Skype" /><a href="skype:{$im|escape:url}?call">{$im}</a>
-    <!-- {/if} -->
-    <!-- {/foreach} --><br />
-    <!-- ICP 证书{if $icp_number} -->
-    {$lang.icp_number}:<a href="http://www.miibeian.gov.cn/" target="_blank">{$icp_number}</a><br />
-    <!-- 结束ICP 证书{/if} -->
-    {insert name='query_info'}<br />
-    {if $stats_code}
-    <div align="left">{$stats_code}</div>
-    {/if}
-    <div align="left"  id="rss"><a href="{$feed_url}"><img src="../images/xml_rss2.gif" alt="rss" /></a></div>
-  </div>
-</div>
 <div id="topcontrol" class="mui-lift"  style=" display:none; overflow: visible; width: 35px; height: 430px; margin-left: -632px; z-index: 999998;">
   <div class="sn-nav-wrapper" style="position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; margin: auto; display: block; width: 35px; height: 437px; -webkit-transform: scale(1); opacity: 1; -webkit-transition: all 0.3s ease; ">
       <a href="javascript:void(0)" id="J_FloorNvzNav" class="mui-lift-nav mui-lift-two-line"> <b class="mui-lift-nav-num">黄金<br>白银</b> <em class="mui-lift-nav-name">黄金<br>珠宝</em> <s class="mui-lift-nav-line"></s> </a>
@@ -263,68 +264,68 @@
 </div>
 <script>
 $(function(){
-	isIe6 = false;
+    isIe6 = false;
 
-	if ('undefined' == typeof(document.body.style.maxHeight)) {
-		isIe6 = true;
-	}
+    if ('undefined' == typeof(document.body.style.maxHeight)) {
+        isIe6 = true;
+    }
 
-	var offset = $("#topcontrol").offset();
-	var bottom = $("#topcontrol").css("bottom");
-	$(window).scroll(function(){
-		if ($(window).scrollTop() > 500){
-			$("#topcontrol").fadeIn(800);
+    var offset = $("#topcontrol").offset();
+    var bottom = $("#topcontrol").css("bottom");
+    $(window).scroll(function(){
+        if ($(window).scrollTop() > 500){
+            $("#topcontrol").fadeIn(800);
 
-			if(isIe6)
-			{
-				$("#topcontrol").css("position","absolute")
-				$("#topcontrol").css("bottom",bottom)
-			}
-		}
-		else
-		{
-			$("#topcontrol").fadeOut(500);
-		}
+            if(isIe6)
+            {
+                $("#topcontrol").css("position","absolute")
+                $("#topcontrol").css("bottom",bottom)
+            }
+        }
+        else
+        {
+            $("#topcontrol").fadeOut(500);
+        }
 
-	});
+    });
 
-	$("#topcontrol #sider_returntop").click(function(){
-		$('body,html').animate({scrollTop:0},500);
-		return false;
-	});
-
-
-	(function(){
-		$(".mui-lift-nav").click(function(){
-			$(".mui-lift-nav").removeClass("active");
-			$(this).addClass("active");
-			var index=$(".mui-lift-nav").index(this);
-			var top=$(".floor-title").eq(index).offset().top-50;
-			$("body,html").stop().animate({scrollTop:top});
-		});
+    $("#topcontrol #sider_returntop").click(function(){
+        $('body,html').animate({scrollTop:0},500);
+        return false;
+    });
 
 
-		var arr=[];
-		$(".floor-title").each(function(i){
-			arr[i]=$(this).offset().top-100;
-		});
-		//alert(arr);
-		$(window).scroll(function(){
-
-			var top=$(document).scrollTop();
-			for(var i=0;i<arr.length;i++){
-				if(top>=arr[i] && top<arr[i]+100){
-					$(".mui-lift-nav").removeClass("active");
-					$(".mui-lift-nav").eq(i).addClass("active");
-				}
-			}
-		});
+    (function(){
+        $(".mui-lift-nav").click(function(){
+            $(".mui-lift-nav").removeClass("active");
+            $(this).addClass("active");
+            var index=$(".mui-lift-nav").index(this);
+            var top=$(".floor-title").eq(index).offset().top-50;
+            $("body,html").stop().animate({scrollTop:top});
+        });
 
 
+        var arr=[];
+        $(".floor-title").each(function(i){
+            arr[i]=$(this).offset().top-100;
+        });
+        //alert(arr);
+        $(window).scroll(function(){
+
+            var top=$(document).scrollTop();
+            for(var i=0;i<arr.length;i++){
+                if(top>=arr[i] && top<arr[i]+100){
+                    $(".mui-lift-nav").removeClass("active");
+                    $(".mui-lift-nav").eq(i).addClass("active");
+                }
+            }
+        });
 
 
 
-	})();
+
+
+    })();
 
 
 })
@@ -354,64 +355,64 @@ $(function(){
 
 
 <script type="text/javascript">
-	$(function(){
+    $(function(){
 
-		$(".mui-tab li").hover(function(){
-			$(this).addClass("on");
-			$(this).find(".left_conts").css("display","block").stop(true,false).animate({"right":35,"opacity":1},200);
-		},function(){
+        $(".mui-tab li").hover(function(){
+            $(this).addClass("on");
+            $(this).find(".left_conts").css("display","block").stop(true,false).animate({"right":35,"opacity":1},200);
+        },function(){
 
-			$(this).removeClass("on");
-			$(this).find(".left_conts").stop(true,false).animate({"right":70,"opacity":0},200,function(){
-				$(this).hide();
-			});
+            $(this).removeClass("on");
+            $(this).find(".left_conts").stop(true,false).animate({"right":70,"opacity":0},200,function(){
+                $(this).hide();
+            });
 
 
-		});
+        });
 
-		$(".logo-qrcode").hover(function(){
-			$(this).children(".mui-mbarp-qrcode-tip").css("visibility","visible");
-		},function(){
-			$(this).children(".mui-mbarp-qrcode-tip").css("visibility","hidden");
-		});
+        $(".logo-qrcode").hover(function(){
+            $(this).children(".mui-mbarp-qrcode-tip").css("visibility","visible");
+        },function(){
+            $(this).children(".mui-mbarp-qrcode-tip").css("visibility","hidden");
+        });
 
-	});
-	//
-	var h=$(".Floatright_box").height();
-	$(".Floatright_box").css({"margin-top":-h/2});
+    });
+    //
+    var h=$(".Floatright_box").height();
+    $(".Floatright_box").css({"margin-top":-h/2});
 </script>
 
 <script>
 $(function(){
-	isIe6 = false;
+    isIe6 = false;
 
-	if ('undefined' == typeof(document.body.style.maxHeight)) {
-		isIe6 = true;
-	}
+    if ('undefined' == typeof(document.body.style.maxHeight)) {
+        isIe6 = true;
+    }
 
-	var offset = $("#topcontrol2").offset();
-	var bottom = $("#topcontrol2").css("bottom");
-	$(window).scroll(function(){
-		if ($(window).scrollTop() > 500){
-			$("#topcontrol2").fadeIn(800);
+    var offset = $("#topcontrol2").offset();
+    var bottom = $("#topcontrol2").css("bottom");
+    $(window).scroll(function(){
+        if ($(window).scrollTop() > 500){
+            $("#topcontrol2").fadeIn(800);
 
-			if(isIe6)
-			{
-				$("#topcontrol2").css("position","absolute")
-				$("#topcontrol2").css("bottom",bottom)
-			}
-		}
-		else
-		{
-			$("#topcontrol2").fadeOut(500);
-		}
+            if(isIe6)
+            {
+                $("#topcontrol2").css("position","absolute")
+                $("#topcontrol2").css("bottom",bottom)
+            }
+        }
+        else
+        {
+            $("#topcontrol2").fadeOut(500);
+        }
 
-	});
+    });
 
-	$("#topcontrol2,#sider_returntop2").click(function(){
-		$('body,html').animate({scrollTop:0},500);
-		return false;
-	});
+    $("#topcontrol2,#sider_returntop2").click(function(){
+        $('body,html').animate({scrollTop:0},500);
+        return false;
+    });
 
 })
 </script>
