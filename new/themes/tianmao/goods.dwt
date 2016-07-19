@@ -59,19 +59,19 @@ function reg(str){
 
 <script>
 $(function(){
-	/*放大镜缩略图左右切换效果*/
-	$("#detail_img_slider").slide({
-			mainCell:"#J_tabSlider ul",
-			vis:5,
-			prevCell:".pre_btn",
-			nextCell:".next_btn",
-			effect:"leftLoop"
-	})
-	/*放大镜缩略图点击选中效果*/
-	$("#J_tabSlider ul li a").click(function(){
-		$("#J_tabSlider ul li").removeClass("cur");
-		$(this).parent().addClass("cur");
-	})
+  /*放大镜缩略图左右切换效果*/
+  $("#detail_img_slider").slide({
+      mainCell:"#J_tabSlider ul",
+      vis:5,
+      prevCell:".pre_btn",
+      nextCell:".next_btn",
+      effect:"leftLoop"
+  })
+  /*放大镜缩略图点击选中效果*/
+  $("#J_tabSlider ul li a").click(function(){
+    $("#J_tabSlider ul li").removeClass("cur");
+    $(this).parent().addClass("cur");
+  })
 })
 </script>
 
@@ -193,7 +193,7 @@ $(function(){
 
                   </div>
                   <!--{/if}-->
-      			<div class="clearfix"></div>
+            <div class="clearfix"></div>
                   <!--{if $goods.is_promote and $goods.gmt_end_time } 促销-->
                   {insert_scripts files='lefttime.js'}
                   <p style="display:none"> {$lang.promote_price}{$goods.promote_price}
@@ -271,7 +271,7 @@ $(function(){
 
                     <a onclick="buyNumber.minus()" href="javascript:;" class="jian"><img src="images/jian.gif" ></a>
                     <input name="number" type="text" value="1" defaultnumber="1" onblur="changePrice()" id="product_num">
-					<a onclick="buyNumber.plus()" href="javascript:;" class="jia"><img src="images/jia.gif" /></a> </div>
+          <a onclick="buyNumber.plus()" href="javascript:;" class="jia"><img src="images/jia.gif" /></a> </div>
                   <span style="float:left; height:28px; line-height:28px;margin-right:10px;">件</span>
                   <p class=""><!-- {if $goods.goods_number neq "" and $cfg.show_goodsnumber} 商品库存-->
 
@@ -508,9 +508,9 @@ document.getElementById('history_list').innerHTML = '{$lang.no_history}';
                   <!-- <li ><a id="detail-id" href="#shangp"  class="current">商品属性</a></li> -->
 <li ><a id="detail-id" href="#current"  class="current">商品属性</a></li>
                   <!-- <li><a id="coms1-id" href="#coms1">买家评论</a></li> -->
-                  <li><a id="coms1-id" href="#current">买家评论</a></li>
+                  <li><a id="coms1-id" href="#comment">买家评论</a></li>
                   <!-- <li class="advantage"><a id="good-id" href="#bought_note">成交记录</a></li> -->
-                  <li class="advantage"><a id="good-id" href="#current">成交记录</a></li>
+                  <li class="advantage"><a id="good-id" href="#record">成交记录</a></li>
                 </ul>
               </div>
             </div>
@@ -536,7 +536,7 @@ return offset;
 
             <div  id="no_try_record">
 
-
+<a name="current"></a>
               <div class="inLeft_attributes clearfix" style="margin:0;">
 
                 <div class="inLeft_attributes_1">
@@ -564,6 +564,7 @@ return offset;
                     <!--收货评论-->
 
                     <!--zhou start-->
+                    <a name="comment"></a>
                              <div class="inLeft_comment" id="coms1">
 
                               <!--商品评分 开始-->
@@ -616,12 +617,13 @@ return offset;
 
                 </div>
                  <!--zhou end-->
+                 <a name="record"></a>
                  <div id="bought_note">
                  <!-- #BeginLibraryItem "/library/bought_note_guide.lbi" -->
 
-					{insert_scripts files='transport.js,utils.js'}
-					<div id="ECS_BOUGHT">{* ECSHOP 提醒您：动态载入bought_notes.lbi，显示当前商品的购买记录 *}{insert name='bought_notes' id=$id}</div>
-			   <!-- #EndLibraryItem -->
+          {insert_scripts files='transport.js,utils.js'}
+          <div id="ECS_BOUGHT">{* ECSHOP 提醒您：动态载入bought_notes.lbi，显示当前商品的购买记录 *}{insert name='bought_notes' id=$id}</div>
+         <!-- #EndLibraryItem -->
                       </div>
 
 
