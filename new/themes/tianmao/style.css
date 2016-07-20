@@ -1131,7 +1131,7 @@ border-color: white transparent;
 }
 .leftNav {
 	width:190px;
-	height:482px;
+	/*height:482px;*/
 	position:relative;
 	z-index:9999;
 }
@@ -6699,7 +6699,7 @@ width: 42px;
 }
 .content {
 	width:100%;
-	padding:0 0 30px 0;
+	padding:0 0 0 0;
 	float:left;
 	z-index:10;
 }
@@ -7196,7 +7196,7 @@ transition: width .5s ease;}
 }
 .center_title {
 	width:460px;
-	height:30px;
+	/*height:30px;*/
 	line-height:23px;
 	overflow:hidden;
 	font-size:14px;
@@ -8675,15 +8675,22 @@ _color:expression(this.previousSibling==null?'#4c4c4c':'');
 }
 /*用户登录注册*/
 #header_dl {
-	height: 80px;
-	background:#FEDC95 ;
+	height: 32px;
+	background:#545454;
 	width: 100%;
 	margin-bottom: 0;
 }
+#header_dl h3{
+	color: #fff;
+	text-align: left;
+	font-family: 微软雅黑;
+	font-size: 12px;
+}
+
 #header-inner {
 	position: relative;
 	width: 990px;
-	height: 80px;
+	height: 32px;
 	margin: 0 auto;
 }
 #header_dl .logo {
@@ -8693,10 +8700,10 @@ _color:expression(this.previousSibling==null?'#4c4c4c':'');
 	padding-top: 15px;
 }
 .LOgin_conts {
-	width:1200px;
-	margin: 0 auto;
 	padding-top: 49px;
-	/*overflow:hidden*/
+	height: 724px;
+	background: url(images/loginbg.jpg) no-repeat;
+	background-size: cover;
 }
 .LOgin_conts .pic {
 	width: 528px;
@@ -8720,7 +8727,7 @@ _color:expression(this.previousSibling==null?'#4c4c4c':'');
 #coLogin_page2 {
 	padding-bottom: 41px;
 	overflow:hidden;
-	float:left
+	float:left;
 }
 #coLogin_page2 .bd {
 	padding: 25px 26px 20px;
@@ -8752,7 +8759,8 @@ _color:expression(this.previousSibling==null?'#4c4c4c':'');
 .coLoginBody {
 	width:400px;
 	overflow:hidden;
-	float:left
+	float:right;
+	padding-top: 120px;
 }
 .coLoginBody .coLogin_title {
 	width:312px;
@@ -9865,7 +9873,7 @@ td.nstep1_count div span, td.nstep1_count div b {
 	font-size: 18px;
 }
 div.price-sum {
-	width:156px;
+	width:195px;
 	height:48px;
 	line-height:48px;
 	float:right;
@@ -10218,7 +10226,7 @@ a.hpink:hover {
 .content_login {
 	width:978px;
 	margin:20px 0 0 0;
-	padding:0 0 50px 0;
+	padding:0 0 0 0;
 	border:1px #e5e5e5 solid;
 	background:#fff;
 	float:left;
@@ -12376,8 +12384,10 @@ i.i_sbar_nub {	margin:0 auto;
 .mui-mbarp-qrcode-hd img {width: 140px;height: 140px;}
 .logo-qrcode {	top:200px;	background:url(images/wxpng.png) no-repeat;}
 .tab-logo-top {	background:url(images/toppng.png) no-repeat;top:100px;}
-
-
+.new_login{
+	width: 1200px;
+	margin:auto;
+}
 
 
 
