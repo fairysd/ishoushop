@@ -10301,11 +10301,22 @@ a.hpink:hover {
 	width:400px;
 }
 .coLogin_txt {
-	height: 42px;
+	height: 33px;
 	line-height: 18px;
 	width:200px;
 	border: solid 1px #C8C8C8;
 	vertical-align: middle;
+	background-color: transparent;
+}
+.new_login .coLogin_txt {
+	height: 33px;
+	line-height: 18px;
+	width:200px;
+	border: solid 1px #fff;
+	vertical-align: middle;
+	-webkit-box-shadow: 0 0 0px 1000px white inset;
+	border-left: solid 1px #ccc;
+	padding-left: 10px;
 }
 .coLogin_txts {
 	height:23px;
@@ -10465,7 +10476,7 @@ a.hpink:hover {
 	color:#f63860;
 }
 .smLogin_btn {
-	background-color: #FEDC95;
+	background-color: #e7a055;
 	border-radius:8px;
 	width: 254px;
 	height: 40px;
@@ -10478,7 +10489,7 @@ a.hpink:hover {
 	font-size: 18px;
 	border:none;
 	font-weight: 700;
-	color: #000000;
+	color: #ffffff;
 }
 ul.entries .register a {
 	float: right;
@@ -12388,7 +12399,10 @@ i.i_sbar_nub {	margin:0 auto;
 	width: 1200px;
 	margin:auto;
 }
-
+.new_login .bd{
+	background:url(images/loginbg_03.png) no-repeat;
+	background-position: 42px 12px;
+}
 
 
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -41,17 +41,15 @@
 <div class="form-content" style="position:relative">
   <div id="coLogin_page2">
 
-<div class="coLogin_box"  style="width: 310px; border: 1px solid #CCC; margin:0 0 0 50px;background-color:#333333;">
-<img src="images/sanjiao.png" alt="" style="position: absolute;width:50px;height:50px;margin-left:257px;margin-top:3px;">
+<div class="coLogin_box"  style="width: 310px; border: 1px solid #fff; margin:0 0 0 0;background-color:#ffffff;border-radius: 10px;">
 <div class="bd">
    <form name="formLogin" action="user.php" method="post" onSubmit="return userLogin()">
-
           <div class="coLogin_onel">
           <p style="text-align: center;font-size:20px;color:#FFFFFF;">登录爱收宝商城</p>
             <p></p>
             <div class="coLoginTxt" >
             <div class="coLogin_txt_all" >
-            <div style="float: left;width:46px;height:46px;"><img src="images/username.jpg" alt="手机号" width="46px" height="46px"></div>
+            <div style="float: left;width:46px;height:46px;text-align: center;"><img style="max-width: 100%;" src="images/icon_03.png" alt="手机号"></div>
            <div style="float: left;"><input placeholder="手机号" name="username" type="text" size="17" class="coLogin_txt"  /></div>
             </div>
             </div>
@@ -60,11 +58,11 @@
            <p><span style="text-align:left; float:left"></span></p>
             <div class="coLoginTxt" style="width:235px;">
             <div class="coLogin_txt_all" style="">
-            <div style="clear:both;width:46px;height:46px;float: left;"><img src="images/password.jpg" alt="密码" width="46px" height="45px"></div>
+            <div style="clear:both;width:46px;height:46px;float: left;text-align: center;"><img style="max-width: 100%;" src="images/icon_06.png" alt="密码" ></div>
             <div style="float: left;"><input name="password" type="password" size="17" class="coLogin_txt"/></div>
             </div>
             </div>
-             <p style="margin-top:20px;"><a href="user.php?act=get_password" class="question" style="width:96px; text-align:right;color:#FFFFFF;">忘记登陆密码？</a></p>
+             <p style="margin-top:20px;"><a href="user.php?act=get_password" class="question" style="width:96px; text-align:right;color:#000;">忘记登陆密码？</a></p>
           </div>
           <!-- 判断是否启用验证码{if $enabled_captcha} -->
           <div class="coLogin_onel">
@@ -89,7 +87,7 @@
 
           </div>
           <ul class="entries">
-           <li class="register "><a href="user.php?act=register" style="color:#FEDC95;">免费注册</a></li>
+           <li class="register "><a href="user.php?act=register" style="color:#000;">免费注册</a></li>
           </ul>
     <div class="coLogin_onel" style="display:none">
       <p></p>
@@ -138,9 +136,8 @@
     <div style="width:90px;height:30px;line-height:30px;background-color:#986700;text-align:center;margin-left:10px;"><a style="color:#FFFFFF;">手机注册</a></div>
     </div>
 <div class="form-main-list" style="padding-bottom: 20px;">
-
-                    <div class="coLogin_box" style="width: 582px; overflow:hidden;float:left;">
-    <form action="user.php" method="post" name="formUser" onsubmit="return register();">
+<div class="coLogin_box" style="width: 582px; overflow:hidden;float:left;">
+    <form action="user.php" method="post"name="formUser" onsubmit="return register();">
 
        <!--  <div class="coLogin_one">
           <p>{$lang.label_username}：</p>
